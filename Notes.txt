@@ -1,0 +1,314 @@
+12.08.2022
+create project 
+create user story 
+create task 
+report bugs
+-------------------------------------------------------------------------------------------------------------------------------------------
+create tast plan
+inside the test plan v have to set the test cases 
+test execution
+
+--------------------------------------------------------------------------------------------------------------------------------------
+bugs 
+1.  "Braches"spelling mistakes in the dashborad page................................................ok
+4.  "Add Braches" spelling mistakes.................................................................
+3.  Home text link not working............................................................................
+6.  in username right_drop-down menu "Account Setting"not working......................................
+7.  if ignore the document & image in the head module_Add Employee after fill the employee details it shows the "fatal error"......not a bug
+8.  Head module_Add Employee not able to edit it.shown error message......................................
+9.  when click the Add employee button in officer module  then existing assistant module opened tab automatically changed to officer module.
+10.  "+" symbols are missed in the company ID.................not a bug
+11.  in date field 00-00-0000 invalid date also accept.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+15.08.2022
+Admin employee details are shown in the Office Employee & Assistant Employee details (integration testing)
+
+Office Employee details are shown in the Admin employee & Assistant Employee details (integration testing)
+
+Assistant Employee details are shown in the Office Employee & Admin employee details (integration testing)
+
+
+in head module Employee only able to download(edit , delete) the Employee details. (want to add the scenario in end to end testing)
+
+in Officer module Employee able to view (edit , delete)the Employee details.(want to add the scenario in end to end testing)
+
+in Assistant module Employee able to view (edit , delete)the Employee details.(want to add the scenario in end to end testing)
+
+sorting button (ascending order,descending order), next page. (want to add the scenario in end to end testing)
+
+Home text link & option button are able to click (want to add the scenario in end to end testing)
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+project name
+Lapine tech - rabbit
+bonjour tech - welcome (bojoo)
+
+
+proxyma-nearest star
+-------------------------------------------------------------------------------------------------------------------------------------
+19.08.2022
+url ------http://rmgtestingserver/domain/HRM_System/
+HR email ----hrhead@gmail.com
+HR password --------hrhead@123
+drop down ------
+login ----------
+
+
+-------------------------------------------------------------------
+build mangmt tool --------mavem,gradle,
+maven eclipse plugin & command 
+org.tyss
+projectname.selenuim.framework.
+
+cnrt+shift+f
+
+
+
+
+mysql connector/j-----8.0.29---fetch data form data base
+
+Apache poi 5.2.2-----------------xl
+
+
+---------- java inbuild class
+
+
+testng  6.9.8(remove scope)
+
+-------------json
+
+------maven
+
+-------opencsv ---5.6
+
+
+-------------------------------------------------------------------------------------------------------------
+22.08.2022
+properties file --- key and values 
+java feature files
+
+
+how to read the data from prpoperties files  
+1. convert the physical file into java readable object
+2. create the object for properties 
+3. load the all keys 
+4.fetch the data 
+
+adva of 
+1.since java is read able , not required dependancy .
+2. more faster than excel ,xls,etc.....
+3. 
+
+disadvan
+1. not able to fetch multiple data and most unquie keys 
+2. not used for test data only for common data 
+3.
+
+
+why use xl 
+create multiple data & dont want any uniquie data 
+
+
+
+how to read the data from xl 
+fetch the data from the xl 
+1. convert in to physiacl file into readable java object
+2. open the xl workbook.
+3.get the control on sheet
+4. get the control on row
+5. get the control on cell
+6. fetch the data 
+7.  close the workbook
+
+
+
+-------------------------------------------------------------------------------------------------------------
+23.08.2022
+xpath -8 
+//* - all the element 
+@---attribute
+[]-------specify the condition
+
+xpath function:-
+
+last()------ 1 of 6 means locate the last function
+position()
+
+24.08.2022
+normalize-space()------remove the space in betwn the text //a[normalize-space(text(),'more')]
+
+name()----its not attribute@ ; its name function.
+finding the svg tagname by using name()
+//*[name()='svg']  other one  //*[name()='path']
+
+keyword funtion( and , or )
+
+
+xpath-Axes-------- optimize manner use the axes
+:: scope resolution operator
+following::tagname
+preceding::tagname
+following-sibling
+preceding-sibling
+parent
+child
+descendant
+Ancestor 
+----------------------------------------------------------------------
+date 
+//span[text()='DEPARTURE']//following::div[16]//following::p[text()='26'][1]
+
+//span[text()='DEPARTURE']//following::div[text()='August 2022']//following::p[text()='26'][1]
+
+//div[@aria-label='Sat Aug 27 2022']//p[contains(text(),'27')]
+--------------------------------------------------------------------------
+CLIENT id ---RMAR132
+PASSWORD ----raji1994
+------------------------------------------------------------------------------------------------------------------------------------------
+notes for SQL :- ---------topics----------pages  
+                       overview of SQL---- 14-------------------------select,selection,projection,join
+			group and Filter----48------------------------grouping clause , having clause
+			joins---------------87------------------------inner & outer joins are important ; other 3 is there
+		      single row functions--109-----------------------16 commands there	
+			Statements----------122-----------------------data query lanaguage,data definition lang,data control lang,
+									data manipulation lang,transaction control lang.
+									
+------------------------------------------------------------------------------------------------------------------------------------------                 
+06.09.2022
+@findBy-------------
+@findAll-----------works like OR condition
+@FindBys----any one contition true its takes  work like AND
+replace
+interview question ------dynamic xpath into webElement
+-------------------------------------------------------------------------------------------------------------------------------------------
+1. write generic method to read data from property File                                       mock questions-08.09.2022
+2. write generic method to read data from excel file
+3. explain different types of data used in your framework
+4. Why property file is preferred for common data
+5. Difference between @FindBy, @FindAll and @Findbys with syntax Ex
+6. What are the different ways to achieve data driven testing? po
+7. explain project folder structure?
+8. Write all the methods in database utilities
+9. Write generic method to handle dropdown
+10. write atleast 3 generic methods to achieve synchronization in selenium(implicit, explicit, custom)
+11. Write a generic method to handle multiple windows in selenium
+12. Write a generic method to take screenshot
+13. write atleast 1 generic method to perform scroll action
+14. write atleast 3 generic methods to perform mous sue actions
+15. list the advantages of generic libraries
+16. What is object repository?
+17. Why Object repository?
+18. What is POM?
+19. Why POM?
+20. create a POM Class for login page consider 3 elements 
+    -> username - locator name = user_name
+    -> password - locator id = user_password
+    -> login- locator id = submitButton
+21. Write an example method overloading in generic libraries
+22. Write an example for method overloading from business libraries
+23. explain polymorphism with respect to your framework
+24. explain encapsulation wrt your framework
+25. is it possible to handle staleElementReferenceException without POM? if yes, How ?
+26. difference between pom and object repo?
+27. What is the meaning of AutoHealing?
+28. What is Parameterization and what its purpose?
+29. Which package provides the libraries to get the data from property file?
+30. What is the difference between select querry and non-select querry?
+31. What are the types of Data bases? Explain with Examples?
+32. What is Property file and why it is used?
+33. What is JDBC? What is the difference between JDBC driver and JDBC API?
+34. Why JDBC in Automation? Explain with an example.
+35. What is polling period? Write a generic method to modify the polling period.
+36. What is the difference between implicit wait and explicit wait?
+37. What are Generic Components and what is the adavantage of using Generic Components? 
+38. Write a java program to get only the first and the third column value from "students" table of "school" database.
+39. Write a java program to insert a row in to the "employee" table of "organization" data base.
+40. Write a program to write data into 10th row and 4th cell of an Excel sheet.
+41. Where have you used interfaces in your framework till now? Brief about that.
+42. Where have you used collections in your framework till now? 
+43. What are the different ways to handle a child browser popup? Write the generic code for at least 2 approaches? 
+44. How to handle a dropdown? Write generic methods for all the approaches 
+45. What are the different ways to click on an element? Write syntax.
+46. what are the different ways to pass values to a text field? Write syntax. 
+47. What are the different ways to scroll a webpage? Write syntax. 
+48. What are the different ways to refresh a webpage? Write syntax.            
+49. Difference between the click and submit
+50. write generic method for both write and read the data from database
+-------------------------------------------------------------------------------------------------------------------------
+08.09.2022
+1.baseclaass 
+2.testpractice--execute (extends)
+3.
+testNG----parameters 
+priority = -1
+description = "i dont know"
+enabled = false
+dependsOnMethods = {"step3Test"}
+alwaysRun =true
+
+testNG----Annotations orders
+@BeforeSuite 
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test 
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+@Group
+
+
+xml 
+parallel execution
+@Group
+method class test 
+run
+<exculde>
+<include>
+
+
+
+
+@dataprovider
+2 dimesional array
+
+@Listener
+
+
+
+Assterstion:
+Assert.fail
+softAssert
+
+
+
+retryanalyser---class :-(it shows the retries in console)
+IRetryAnalyser---interface----------
+ItestResult------interface----------
+ItestAnnotation---interface----------
+TTestListener --interface---------
+retry()--method--we have to give implementation class
+setRetryAnalyser()------
+<listeners>
+<listener>-----able to give many listener
+</listeners>
+
+
+listener -----monitor the execution
+ontest
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

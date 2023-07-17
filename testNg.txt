@@ -1,0 +1,204 @@
+TestNG---unit test framework , other one main is its TDD framework
+why TestNG ?
+ -----to run all the test scripts in batch / parallel / group without any manual
+ -----TestNG.xml is main controller of the selenium framework , where we start the execution
+ -----HTML report generate
+ -----Annotation
+ -----Batch execution
+ -----Assertion
+ -----ITestListeners(used to take screenshot for failed test case)
+ -----RetryAnalyser (used to re-run the failed test cases with required count)
+
+----java unit testing framework
+----open source -means free jar files.
+
+
+purpose---designing the test cases in the systematic way 
+----html reports 
+----different annotations
+----priorities/ sequence
+----dependency
+----grouping
+----data provider
+
+ 
+order of annotation sequence (**---these only mostly used in every frame work)
+---------------------------
+
+@BeforeSuite-----------setup system properties / database connect
+@BeforeTest------------launchBrowser
+@BeforeClass------**------enter the URL
+@BeforeMethod-----**------ login to app
+@Test--------------**------run against to test scripts
+@AfterMethod-------**------logout app
+@AfterClass-------**------enter the URL
+@AfterTest---------------close the Browser
+@AfterSuite--------------
+
+@Parameters---------------
+
+
+(interview question how  keyword used and why used the keyword)
+priority , groups , dependsOnMethods ,enabled=false , invocationCount , invocationTimeOut , expectedExceptions ==========> features of testNG
+
+priority , groups
+-------------------
+@Test(priority=1,groups="Title")
+
+
+@Test(priority=3,groups="logo")
+
+
+@Test(priority=2,groups="link Test")
+
+
+@Test(priority=4,groups="Serach text fields")
+
+
+dependsOnMethods
+----------------
+@Test -----------------------1St execute this successfully then go for next @Test
+public void loginTest ()
+ {
+Sys.out.println("Login");
+}
+
+@Test (dependsOnMethods="loginTest") -----previous loginTest failure to execute it ignore
+public void HomePage ()                       HomePage @Test
+ {
+Sys.out.println("home page");
+}
+
+
+invocationCount--it run reqiured times by using invocationCount
+----------------
+@Test(invocationCount=3)      
+        public void SUM ()
+ {
+Sys.out.println("BALA");             // printed 3 times in console bcz of using invocationCount
+}
+
+
+invocationTimeOut ----within the time(milliseconds) it should execute other wise after the timeOut it terminate
+-----------------------                                 
+@Test(invocationTimeOut =2)
+
+expectedExceptions ----without using try catch block & we know that exception at that time used this keyword
+@Test(expectedExceptions =NumberFormatException.class)
+
+public void test1() {
+ String x= "100S" ;
+ integer.parseInt(x);
+ }                           // know the @Test is pass bcz of the expectedExceptions keyword used
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Assertion ---
+---------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+how to configure the <parameter>tag in testNG.xml file
+
+how to run the test cases in testNG.xml file
+
+
+public class ParameterSSS {
+	WebDriver driver;
+
+	@Test
+	@Parameters({ "browser", "url", "admin", "manager" })
+	public void gmail_Com(String browser, String url, String admin, String manager) // https://demo.actitime.com/login.do
+	{
+		if (browser.equals("chrome")) {
+                       WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else {
+			driver = new FirefoxDriver();
+		}
+
+		driver.get(url);
+		driver.findElement(By.xpath("//input[@name='username']")).clear();
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys(admin);
+
+		driver.findElement(By.xpath("//input[@name='pwd']")).clear();
+		driver.findElement(By.xpath("//input[@name='pwd']")).sendKeys(manager);
+
+		driver.findElement(By.xpath("//div[.='Login ']")).click();
+
+	}
+
+}
+
+these are the configure variables or  enviroment variables-----not test data 
+----------------------------------------------------------
+
+<suite name="parameter prac from youtube">
+	<test thread-count="5" name="using parameters">
+
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="https://demo.actitime.com/login.do" />
+		<parameter name="admin" value="admin" />
+		<parameter name="manager" value="manager" />
+
+		<classes>
+			<class name="TestNGPractice.ParameterSSS" />
+		</classes>
+		
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@DataProvider-------to execute same test case multiple Times with different test Data , we go for @DataProvider
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+parallel execution
+------------------
+parallel execution is nothing but side by side (parallelly)execution with your required number of threads (threads means like a process) & reduce the time of execution.
+parallel & Thread-count these 2 attribute used.
+if you mention parallel="false" or "none"----it is take as sequencially
+if you mention parallel="1"----it is take as sequencially
+if you mention parallel="-1"----it is take as IllegalArugumentsexception
+parallel execution by using .xml 
+--------------------------------
+tests---level execution
+<suite name="Suite" parallel="tests" thread-count="2">  ------ 2 threads taken   
+
+  <test  name="Test1">
+    <classes>
+      <class name="TestNGPractice.TestClass_1Test"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test  name="Test2">
+    <classes>
+      <class name="TestNGPractice.TestClass_2Test"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test  name="Test3">
+    <classes>
+      <class name="TestNGPractice.TestClass_3Test"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+-----------------------------------------------------------------------
+<suite name="Suite" parallel="methods" thread-count="2">  ------------------here 4 
+
+	<test name="Test1">
+		<classes>
+			<class name="TestNGPractice.TestClass_1Test" />
+			<class name="TestNGPractice.TestClass_2Test" />
+			<class name="TestNGPractice.TestClass_3Test" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Test2">
+		<classes>
+			<class name="TestNGPractice.TestClass_4Test" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
+
+

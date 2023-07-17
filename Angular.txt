@@ -1,0 +1,27 @@
+Node => convert from HTML,TypeScript,css to HTML,javaScript,css 
+Npm(node package manager) => used for any other libraries need to get inside to ur application.
+ npm install =>take from package.json & put it in the node_module.
+example:- Npm install google-map --save => this command is to store in the package.json
+     
+angular.json => used for where start the code or where starting page.
+
+
+Project structure
+----- package.json-------> 
+Dependencies are the packages that your application or package requires to run correctly.
+DevDependencies are packages that are only required during the development process.developers to build, test, and maintain the code. 
+notes:- when give npm install in cli then it import in the package.json
+
+Modules 
+
+Components
+
+Nested Components
+
+interpolation 
+
+Property Binding 
+---- Event Binding
+---- 
+----->  $0 it shown the current node.
+        HTML is static , it shows the hot coded values , but DOM it shows the updated or modified dynamic values.so always communicate with the DOM.

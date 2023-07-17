@@ -1,0 +1,293 @@
+API Testing with Postman 
+-------------------------
+
+http request 
+-------------
+
+GET(Select)
+POST(Create)----> REQUEST BODY / REQUEST PAYLOAD
+PUT (Update)----> REQUEST BODY / REQUEST PAYLOAD
+DELETE(Delete)
+
+every request will get you in json format/xml/html/text ect....
+
+https://reqres.in/api/users?page=2  
+                                  ======>(URL-uniform resource Locator 
+                                          ,URI-uniform resource Identifiers)
+
+ https://reqres.in ======> Domain
+ /api/users ======> Path parameters
+ page=2 ======> Querey parameters
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Data Driven Testing ----->execute same request with multiple data is DDT
+ How to run collection
+ Export/importing collections
+
+
+Req url (post):- https://dummy.restapiexample.com/api/v1/create
+
+Request body/request payload
+----------------------------
+{
+    "name":"khan",
+    "salary":"14,50,000",
+    "age":"35"
+}
+
+data format: json,csv
+Req body format:-
+-----------------
+{
+    "name":"{{NAME}}",
+    "salary":"{{SALARY}}",
+    "age":"{{AGE}}"
+}
+
+(collection==> test suite ||each request ==>is a test scripts )
+
+How to run the single collection (which is includes multiple request)
+		-----> go to Runner request---click to run 
+
+
+how to run postman collection/request from the command line
+-----------------------------------------------------------
+1. install Node.js
+ 	node version -----> node -v
+        		    npm -v
+ 			    
+2. install newman
+		nodenpm install -g newman
+
+3. to genrate html report 
+   		npm install newman-reporter-html
+
+4. export collection and then run from command prompt
+
+How many way to run collection through command prompt
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.  this data should show in command promt itself 
+syntax:-  newman run <<exported collection file.json>>
+   example:- C:\Users\abala\OneDrive\Desktop\Postman_APIs>Data Driven Testing.postman_collection.json 
+
+2. the html report in chrome browser
+   syntax:-  newman run <<exported collection file.json>> -r html
+
+3. (with out share any file execute remotely)
+you have to share your collection and get the URL
+shared link from collection :- https://www.getpostman.com/collections/bdc5d57d58739d656c48
+   example:-  C:\Users\abala\OneDrive\Desktop\Postman_APIs>https://www.getpostman.com/collections/bdc5d57d58739d656c48 -r html
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+how to create own API's(Fake API's)
+-----------------------------------
+1. Install NodeJS
+      after installation give command:- node --version
+
+2. npm comes with node.js
+       Check version:- npm --version
+
+3. install json-server
+	npm install -g json-server
+
+4. Create info.json file with sample data (json format)
+	location:- 
+
+5. Run below command to make your API's up and running 
+         json-server info.json
+
+(note:- don't close the command prompt while on work in postman)
+--------------------------------------------------------
+postman variables
+-----------------
+1. Collection variables----->only within the collection 
+2. Environment variables/ Global variables----->multiple collection we use it 
+
+WorkFlow
+--------
+postman.setNextRequest("Request name");
+postman.setNextRequest("null");
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to chain API Requests-----> one output response is the other input for request 
+Authorizations.
+---------------------------------------
+API request1 -------> response
+
+API request2 -------> response
+
+API request3 -------> response
+
+Basic Auth:- 
+-------------
+request url:- https://postman-echo.com/basic-auth
+  username:-  postman
+  password:-  password
+
+API Key:
+---------
+                api.openweathermap.org/data/2.5/forecast/daily?q=Delhi&cnt=1
+API Key/appid:   fe9c5cddb7e01d747b4611c3fc9eaf2c
+
+
+Bearer Token/ OAuth 2.0
+----------------------
+https://developer.github.com/v3/respos/
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Pre-Request Scripts------>Request-------->Test Scripts
+
+order of execution
+-------------------
+    collections
+	Folder
+	  Requests
+
+postman Scripting using JavaScript and chai BDD
+---------------------------------------------
+
+// check the status code in Response 
+--------------------------------------
+pm.test("check the status code",function(){
+  pm.response.to.have.status(200);
+});
+
+//in single function have validate multiple Assertion
+-------------------------------------------------------
+pm.test("validate the multiple fields in response ",function(){
+responseJson=pm.response.json();
+pm.expect(responseJson.data.id).to.eql(4);
+pm.expect(responseJson.data.email).to.eql("eve.holt@reqres.in");
+pm.expect(responseJson.data.last_name).to.eql("Holt");
+});
+
+
+// handling responses without parse
+--------------------------------------
+pm.test("verify text has contain in the response body",function(){
+pm.expect(pm.response.text()).to.be.include("Eve");
+});
+
+
+//Status code being one of required set
+----------------------------------------
+pm.test("any one status code",function(){
+pm.expect(pm.response.code).to.be.oneOf([200,201]);
+});
+
+
+// validate Header
+--------------------
+pm.test("verify the content-type present in Header", function(){
+pm.response.to.be.header("Content-Type");
+});
+
+
+// verify the Content-Type along with value 
+---------------------------------------------
+pm.test("verify the Content-Type value",function(){
+pm.expect(pm.response.headers.get("Content-Type")).to.eql("application/json; charset=utf-8");
+});
+
+
+/* 
+//testing the cookies
+ pm.test("verify the cookies",function(){
+pm.expect(pm.cookies.has("xxxx")).to.be.true;
+});
+
+pm.test("verify the cookies",function(){
+pm.expect(pm.cookies.get("xxxx")).to.eql("xcxxcxc");
+});
+ */
+
+
+// verify Response time 
+------------------------
+pm.test("validata response time is < reqiured time",function(){
+pm.expect(pm.response.responseTime).to.below(150);
+});
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

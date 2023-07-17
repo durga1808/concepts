@@ -1,0 +1,80 @@
+collection selenuim RC 
+selenuim grid --------used for remote execution
+selenuim  webdriver
+
+selenuim standalone server(above 3 are had in )
+
+selenuim grid---- 2 modes 
+distrubted------indutually start all components
+standalone-------hub , nodes----used this only
+
+default port is selenuim server 4444
+ who invoke the cleint is hub 
+who under the hub is known as node
+
+
+
+-role node -port 5555 -hub 
+
+-role hub
+
+ config :-
+browser 
+driver.exe 
+selenuim standalone server
+
+script:- 
+remotewebdriver-----
+Desired capabl----
+url---
+
+
+http://192.168.43.90:4444/grid/register/
+
+-------------------------------------------------------------------------------
+cloud computing
+------------------
+public clouds example for -----GitHub
+private clouds example for -----Test Yantra
+hybrid clouds -----------rent a private taxi
+
+infra as a service--iaas-----example for amazon
+
+
+
+AWS
+sign-in
+select thhe region
+selcting the services --EC2-----elastic clouding
+under the network and security   -----create the key pairs
+1.  RSA
+2. private key file formate--- .pem
+3. click the create key pairs
+
+
+click on instanceses---launch an instance
+1. name ---SDET40---> Selenuim Grid practice
+2. os images ----select the free tier eligible
+3. instance type ---
+4. key pair login select 
+5. network setting ---firewall security ----my ip
+6. config storage - 
+7. click launch
+
+
+pick the public IP address in the details session
+username 
+password
+
+action----security----->get window password
+
+
+
+remote desktop connection 
+
+
+
+-------------------------------
+| lastly terminate the instance |  other wise money debit in ur a/c
+-------------------------------
+

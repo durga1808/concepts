@@ -1,0 +1,48 @@
+Quarkus
+--------
+
+
+I think there may be some confusion in your question. Spring Boot and Quarkus are both Java frameworks that run on top of the JVM (Java Virtual Machine). They do not "kill" the JVM or the virtual machine in any way.
+
+However, there are some differences in how Spring Boot and Quarkus are designed to operate that could affect the performance of the JVM or the virtual machine.
+
+For example, Spring Boot is a more mature framework with a larger ecosystem of plugins and libraries. It is designed to be more flexible and can be used for a wide variety of applications. However, this flexibility comes at a cost - Spring Boot applications can be relatively heavy and take longer to start up. This can put a strain on the JVM, especially if you are running multiple instances of your application.
+
+On the other hand, Quarkus is a newer framework that was designed specifically to optimize for cloud-native applications. It uses a technique called "ahead-of-time" (AOT) compilation to generate native executables that can run without a JVM. This can improve the startup time and reduce the memory footprint of your application. However, this approach also comes with some limitations - not all Java libraries are compatible with AOT compilation, so you may need to modify your code or use alternative libraries.
+
+In summary, neither Spring Boot nor Quarkus "kill" the JVM or the virtual machine. They are both Java frameworks that run on top of the JVM. However, they have different design goals and trade-offs that can affect the performance and scalability of your application.
+
+
+Ahead-of-time (AOT) compilation is a technique used to translate programming code into machine code that can be executed directly by the computer's processor, without the need for an interpreter or a virtual machine.
+
+Traditionally, Java code is compiled into bytecode, which is then interpreted at runtime by the JVM. This approach offers some advantages, such as portability and flexibility, but it can also lead to slower startup times and higher memory usage.
+
+AOT compilation solves these issues by precompiling the code into machine code before the application is run. This can result in faster startup times and reduced memory usage, as the compiled code can be loaded directly into memory without the overhead of the JVM. Additionally, AOT compilation can enable optimizations that are not possible with traditional bytecode interpretation, such as inlining and constant folding.
+
+In the context of Java frameworks like Quarkus, AOT compilation is used to generate native executables that can be deployed on servers or cloud platforms without the need for a JVM. This can improve the efficiency and scalability of the application, especially in resource-constrained environments. However, AOT compilation is not suitable for all types of applications and may require modifications to the code or the use of specific libraries.
+
+While Quarkus is designed to be a Java framework, it can also be compiled ahead-of-time (AOT) to generate native executables that do not require a JVM to run.
+
+When you compile a Quarkus application using the GraalVM compiler and the Native Image tool, it produces a standalone executable that includes the application code, the Quarkus framework, and the necessary runtime libraries. This executable can be run directly on the operating system without the need for a JVM or any other dependencies.
+
+This approach has several advantages, such as faster startup times, lower memory consumption, and reduced overhead. However, it also has some limitations, such as reduced flexibility and compatibility with certain Java libraries that rely on dynamic class loading or reflection.
+
+So, while Quarkus is primarily a Java framework that runs on the JVM, it can also be compiled ahead-of-time to generate native executables that do not require a JVM.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In a Quarkus application, the various layers serve different purposes and provide different levels of abstraction. Here's a brief overview of each layer and its purpose:
+
+Entity Layer: This layer represents the domain objects and their relationships. It is responsible for defining the data model and business rules of the application. The entities are typically implemented as Java classes with associated metadata such as annotations for persistence.
+
+Repository Layer: This layer provides a set of abstractions for interacting with data storage systems such as databases or message queues. The repository layer is responsible for executing queries against the data storage system and mapping the results to entities. It also provides a level of abstraction to decouple the business logic from the details of the data storage system.
+
+Service Layer: This layer contains the business logic of the application. It is responsible for orchestrating the interactions between the other layers, executing use cases, and enforcing business rules. The service layer typically depends on the repository layer to retrieve and persist data, and on the entity layer to represent the domain objects.
+
+Resource Layer: This layer exposes the application's functionality over a network protocol, typically HTTP. It is responsible for handling incoming requests, marshaling and unmarshaling data, and returning responses to clients. The resource layer depends on the service layer to execute business logic and retrieve data.
+
+The separation of these layers provides several benefits, including improved testability, maintainability, and scalability. For example, by separating the business logic from the data storage details, it becomes easier to change the underlying data storage system without affecting the rest of the application. Similarly, by separating the resource layer from the business logic, it becomes easier to support multiple network protocols or client types.
+
+
+/*what why ,  purpose of entity layer , resource layer ,service layer , repository layer in quarks application  explain with examples of code*/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

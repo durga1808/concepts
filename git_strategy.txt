@@ -1,0 +1,139 @@
+git branching strategy or model
+--------------------------------
+
+types
+-----
+git Flow
+
+github flow 
+
+trunk-based develpment
+
+=======================================================================================================================================================================
+
+git flow  => Master branch, feature branches, Develop branch, release branch , hotfix branch
+--------
+
+what is git Flow ?
+
+It provides a structured way to manage branches for different stages of development, including development, testing, and release. 
+
+
+why using git Flow ?
+
+Easy to manage releases: Allows teams to work on multiple versions of code in production at the same time.
+
+Reduced conflicts:  reducing the risk of conflicts and mistakes.
+
+
+how to use the git flow ?
+
+intialise the git flow 	: git flow init => it gives setup the sturute of the project
+
+create a feature branch  	: git flow feature start => create the feature branch.
+
+Develop the feature   	: work on the feature branch and develop the feature.
+
+merge a feature branch	 : git flow feature finish => merge the feature branch back into the Develop branch.
+
+create a release branch    : git flow release start => create a release branch.
+
+test the release         :  work on the release branch and test it througly.
+
+merge a release branch 	: git flow release finish => merge the release branch back into the develop and master branch.
+
+create a hotfix branch 	: git flow hotfix start => create a hotfix branch.
+
+work on the hotfix branch and test througly, after that deploy in the production.
+
+merge a hotfix branch 	: git flow hotfix finish => merge the hotfix branch back into the develop and master branch.
+
+
+when use the git flow ?
+
+Git flow is particularly useful for projects that require multiple versions of code in production at the same time, such as projects with long release cycles
+ 
+It is also useful for teams that work on complex projects with multiple contributors.
+
+=======================================================================================================================================================================
+
+
+GitHub flow  => main (master)branch,feature branches
+-----------
+
+What is GitHub flow?
+
+GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+
+
+
+Why use GitHub flow?
+
+It ensures that code is reviewed and tested before it is merged, which helps prevent bugs and errors from being deployed to production.
+
+this Git branching strategy allows for Continuous Delivery and Continuous Integration.
+
+
+
+when to use github flow ?
+
+GitHub flow is best suited for projects that have frequent deployments 
+
+
+how it's work ?
+
+1. create branch
+
+2.Add commit
+
+3.Open a Pull Request
+
+4.Discuss and Reveiw
+
+5.Merge 
+
+6.Deploy
+
+=======================================================================================================================================================================
+
+
+trunk-based development  (trunk or master branch,other feature)
+-----------------------
+
+what is trunk-based developent ?
+
+trunk-based developent is a software development approch when developers worked in the single code-base and continous integration and deploy their code changes.
+
+This process aims to identify and address integration issues as early as possible.
+
+
+why using the trunk-based development ?
+
+identify the integration issues early and test their code changes in shared environment,make it easier to fix it , avoid divergence in the code base.
+
+
+how to use this ?
+
+code base is maintained in single branch is known as trunk.All development work is done on this branch, and changes are integrated 
+
+into the mainline branch as soon as possible.To make changes, a developer creates a branch off the trunk, makes their changes, and then merges the branch
+  
+back into the trunk.This is often done through a pull request and code review process to ensure the quality and correctness of the changes.
+
+
+when use trunk-based development ?
+
+Trunk-based development is well-suited for projects with a small team of developers who need to move quickly, as it allows for rapid iterations  
+
+and quick feedback on changes.It's also a good fit for projects with a stable codebase, where changes are expected to be small and incremental.
+
+
+=======================================================================================================================================================================
+
+
+
+
+
+
+
+

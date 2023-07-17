@@ -1,0 +1,25 @@
+Linux commands
+===============
+
+mkdir newfolder ==> create a new folder.
+rm -r             ==> delete a dir folder.
+cd \folderName  ==> move forward.
+cd ..		==> one step get back to a folder.
+cd ..\..\..     ==> multiple folders move back.
+cp -r <distination folder or file> ==> copy one folder or file
+mv <file name>  ==> move the file or folder
+
+create a text file
+---------------------
+for create a text file ==> touch NewText.txt
+view a text file 	=> cat NewText.txt
+like write some thing inside the file => vi NewText.txt   
+					 :wq =>save & quit 
+					 :q! => not save & quit
+
+
+
+example for unzip the file 
+-------------------------
+root@LAPTOP-OLBVP6PU:/mnt/c/Users/abala/OneDrive/Desktop/extractTheZipFile# unzip /mnt/c/Users/abala/OneDrive/Desktop/kafka/order-service.zip
+

@@ -1,0 +1,87 @@
+
+
+Event-driven architecture (EDA) is a software design pattern in which decoupled applications can asynchronously publish and subscribe to events via an event broker/message broker.Event-driven App can be created in any kind of  programming language , it is a programming approach , not a programming language.
+Event-Driven Architecture, applications communicate with each other by sending and/or receiving events or messages.
+
+Topics
+-------
+topic is a category or feed name to which messages are published.it represent particular stream of data.
+
+producers
+-----------
+Producers are entity that publish the message to kafka topics.they write the message to the specfic topics and the messages are appended with appropriate partitions.
+
+consumers
+----------
+Consumers are entity that subscribe to kafka topics and read the message from them.they read the messages from them.they read the message from the pull-based manner, specfiy the topics & partition from which they want to consume .each consumer message keep on tracking , progress in reading messages by maintaining an offset,indicate the last reading message in each partition.
+
+Partitions
+-----------
+  A topic is divided into one or more partitions.each partitions had in ordered,immutable sequence of message .partitions allow kafka to parallelize data storage & processing.they scalable and fault tolerance of kafka distributing the load across multiple brokers.
+
+Brokers
+--------
+A kafka consist of one or more brokers.
+
+consumers groups
+----------------
+Consumer groups allow parallel consumption of messages from a topic. Consumers within a group divide the partitions of a topic among themselves, ensuring that each partition is consumed by only one consumer within the group. This enables horizontal scaling of consumer applications.
+
+offsets
+--------
+Offsets are numeric identifiers that kafka assigns to each message within a partition.they repersent the position of the message within the partition's sequence.consumers use the offsets to keep tracking of their progress and can rewind or skip to a specific offset for message retrieval.
+
+Replication
+-----------
+Each partition can have multiple replicas, where one replica acts as the leader and others act as followers. The leader handles read and write requests, while followers replicate the leader's data and serve as backups. If a leader fails, one of the followers is automatically elected as the new leader.
+
+	   hierarchy arch
+		1.Cluster
+                2.Brokers
+		3.Topics
+		4.Partitions
+		5.OffSets
+		6.Messages/Events
+features
+---------
+Performance , durability,Zero Downtime,Replication,extensibility,
+scalablity,Reliablity,High volume,Data transformations.
+
+fault tolerance:- Fault tolerance refers to the ability of a system or component to continue functioning properly and providing its intended services even in the presence of failures or errors.
+
+
+Advantages
+-------------
+Improve the flexibility and Maintainability:- 
+
+high scalability:- if you need to add one more microservices (customer) consume it, that don't care about Producer. 
+
+improved Availablity:- if any problem in one microservice , it not affect any other microservices.
+========================================================================================================
+
+creating topics
+---------------
+.\bin\windows\kafka-topics.bat --create --topic NewTopics --bootstrap-server localhost:9092
+
+list of topics
+---------------
+.\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+
+run zookeeper & kafka
+---------------------
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+send message via console
+------------------------
+.\bin\windows\kafka-console-producer.bat --bootstrap-server=localhost:9092 --topic test
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server=localhost:9092 --topic test
+
+need to see all message from the beginning
+---------------------------------------------
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server=localhost:9092 --topic demoTopic --from-beginning
+
+office Automation
+------------------
+notepad ./drivers/etc/hosts

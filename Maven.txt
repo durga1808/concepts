@@ -1,0 +1,91 @@
+Maven => means knowledge accumulator.
+
+Maven :- configuration mangement tool or Build mangement tool
+
+it is used for based on the project object Model.
+
+Maven commands
+==============
+
+mvn clean 
+		this command delete any previous genrated file from previous build. 
+
+mvn validate
+		   this command used to check any needed files are missed or not, example checking the pom.xml file is there or not. 
+
+mvn compile
+		 this command convert source code to bytecode.
+
+mvn test
+		this command used to run any unit test by using compiled code.
+
+mvn package
+		 this command is byte code should changed as jar file as package
+
+mvn install
+		 this command is used for packaged code install  in the local repo , and make it as available for other project.
+
+mvn deploy
+		this command is used for packaged code deploy in the remote repo , and make it avaliable to other user.
+
+
+setting.xml
+===========
+
+<localRepository>/path/</localRepository>: 
+
+This tag specifies the location of the local repository where Maven stores all the dependencies and plugins 
+
+it downloads from remote repositories. For example, if you have limited storage space on your development machine, 
+
+you may want to change the default location of the local repository to a different directory with more storage space.
+
+
+<profiles>: 
+
+This tag is used to define different build profiles in Maven. A profile is a set of configuration settings that can be activated based on various conditions,
+
+ such as the environment, the active system properties, or the existence of a specific file. For example, if you have a project that needs to be built for different environments
+
+ (e.g., development, staging, and production), you can define a profile for each environment and activate the appropriate profile based on the current environment.
+
+
+<mirror>: This tag is used to specify a mirror for a remote repository. A mirror is a copy of a remote repository that is hosted on a different server. Mirrors can be used to improve the performance and reliability of your builds by reducing the load on the remote repository and providing a backup repository in case the remote repository is unavailable. For example, if you have a project that is built frequently and relies on a remote repository that is located in a different country, you may want to configure a local mirror to reduce the latency and improve the performance of your builds.
+
+<servers>: This tag is used to configure the authentication information for accessing remote repositories. For example, if you have a project that relies on a remote repository that requires authentication, you can configure the username and password in the <servers> section of your Maven settings.xml file.
+
+<proxies>: This tag is used to configure a proxy server for Maven. A proxy server is a server that acts as an intermediary between Maven and the internet, allowing Maven to access remote repositories through the proxy server. For example, if you are behind a firewall that blocks direct access to the internet, you can configure a proxy server in the <proxies> section of your Maven settings.xml file to allow Maven to access remote repositories.
+
+<pluginGroups>: This tag is used to configure shorthand notations for plugin groups in Maven. By using this tag, you can specify a shorthand notation for a group of plugins, so that you can use it instead of specifying the full artifact ID each time you want to use a plugin from that group. This makes it easier and more convenient to use plugins in your project's pom.xml file.
+
+<offline>false</offline>: This tag is used to specify whether Maven should operate in offline mode or not. When <offline>false</offline> is set, Maven will attempt to connect to remote repositories and download required dependencies and plugins. When <offline>true</offline> is set, Maven will not attempt to connect to remote repositories and will only use the artifacts and plugins that are already stored in the local repository. For example, if you are working on a project on an airplane or in an environment with limited connectivity, you may want to set Maven to operate in offline mode.
+==========================================================================================================================================================================
+
+Code Repository:        a place to store, manage and version control source code. Examples are GitHub, GitLab, and Bitbucket.
+
+Package Repository:    a place to store and distribute software packages, libraries, and components. Examples are npm (Node Package Manager), 
+                       PyPI (Python Package Index), and Maven (Java Package Manager).
+
+Artifact Repository:   a place to store build artifacts, such as jar files, war files, and ear files. Examples are Nexus and Artifactory.
+
+Image Repository:      a place to store and distribute Docker images. Examples are Docker Hub, Google Container Registry, and Amazon Elastic Container Registry.
+
+Database Repository:   a place to store and manage database schemas, tables, and stored procedures.
+
+Model Repository:     a place to store, manage and version control machine learning models. Examples are OpenAI's GPT-3 and Hugging Face's Model Hub.
+
+==========================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

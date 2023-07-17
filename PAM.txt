@@ -1,0 +1,108 @@
+-- what is PAM (Process Automation Manager) ?
+Process Automation Manager (PAM) is a software tool that enables organizations to automate their business processes. It provides a platform for creating, managing, and executing workflows that automate repetitive and manual tasks, thereby improving efficiency and reducing errors.
+
+-- why using PAM (Process Automation Manager) ?
+
+standalone.bat
+http://localhost:8080/business-central
+
+application server (eap server)
+username   :- admin
+ password   :- admin123
+
+username   :- bala
+password   :- Bala101@gmail
+-------------------------- KIE CHANNEL-------------------------------------------------------------------
+1.  create a Data object within business central & utilize the object in process.
+1.1 create a Data Object in external Maven project & how to give that jar as dependency in our project
+
+----------------------------------------------------------------------------------------------
+create a business process 
+ Step - 01 :- 
+ Bussiness process  -  printEmployeeDetails
+ Packages	        -  com.practice_from_kie_serverchannel.printdto
+
+step 02 :- design the panel (workflow disgram)
+
+step 03 :- Process data 
+ 
+step 04 :- select the script task & give the implementation for task 
+
+step 05  :- Build & Deploy
+
+step 06  :- Manage Process Definition
+          --- new process instance
+          --- what i give in the implementation or consloe. it should display in cmd.  
+
+step 07  :- 
+
+-----------------------------------------------------------------------------------notes--------------------------------------------------------------------------------------------------
+
+How to import and handle the project in the PAM business central 
+https://access.redhat.com/solutions/3546641
+
+PAM Basic Understanding Document 
+https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.10/html/developing_process_services_in_red_hat_process_automation_manager/bpmn-con_business-processes#bpmn-tasks-overview-con_business-processes 
+
+
+MVEL basic understanding documentation 
+http://mvel.documentnode.com/ 
+Learn DMN and FEEL Language
+https://learn-dmn-in-15-minutes.com/learn/the-feel-language.html 
+Domain specific process documentation 
+https://docs.jboss.org/jbpm/v6.0/userguide/jBPMDomainSpecificProcesses.html 
+
+
+Ask the doubts here hope u get the answer 
+https://access.redhat.com/search/#/?q=&p=1&sort=relevant&scoped&language=en&documentKind=Knowledgebase 
+
+
+Documentation to Build DMN designer wrapped in standalone angular app. 
+https://access.redhat.com/documentation/en-us/red_hat_decision_manager/7.13/html-single/getting_started_with_red_hat_decision_manager/index#proc-standalone-editors_getting-started-decision-services  
+
+PAM gate way 
+https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.3/html/process_designer_business_process_model_and_notation_bpmn2_reference_guide/bpmn-gateways_bpmn-reference 
+
+RHPAM is a powerful tool for process and decision management. It enables organizations to automate and improve their business processes and make better decisions by modeling, analyzing and executing them in a consistent and compliant way.
+
+YouTube channel reference: 
+https://www.youtube.com/channel/UCUenK5KVexSGcMWaNYroaUg 
+
+RHPAM provides a complete set of capabilities for process and decision modeling, analysis, execution, monitoring, and optimization. It helps organizations to:
+
+- Model and simulate business processes and decisions to identify potential improvements
+- Analyze and optimize processes and decisions to improve performance
+- Automate processes and decisions to improve efficiency and compliance
+- Monitor and improve process and decision performance over time
+
+RHPAM is built on a strong foundation of open standards and technologies, including BPMN 2.0, DMN 1.1, XML, and Java. It is highly extensible and can be easily integrated with other enterprise applications and systems.
+
+RHPAM is a process-based approach to project management that can be used in a variety of industries. It is a structured approach that helps organizations to plan, execute, and monitor projects in a more efficient and effective way. 
+
+RHPAM is based on the principles of process improvement and quality management. It helps organizations to identify and implement best practices in project management. RHPAM can be used to manage projects of all sizes, from small to large scale. 
+
+RHPAM is a flexible approach that can be tailored to fit the specific needs of an organization. It is a scalable approach that can be used to manage projects of all sizes. RHPAM is an iterative approach that allows organizations to continuously improve their project management processes. 
+
+RHPAM can help organizations to: 
+
+- Improve project planning and execution
+- Improve project monitoring and control
+- Improve project communication and coordination
+- Improve project quality and performance
+- Reduce project costs and schedule delays
+
+RHPAM is a proven approach that has been used by organizations around the world to improve their project management processes. If you are looking for a way to improve the way your organization manages projects, then RHPAM may be the right approach for you.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,318 @@
+SQL(Structured Querey Language)
+-----------------------
+what is data ?
+what is database?
+
+why database ?
+what is DBMS (database management system)?
+why DBMS ?
+what is Relational DataBase Management System?
+why RDMS ?
+what is Relational Model ?
+Data Types Types SQL  ?
+Rules of E.F CODD ?
+what is constraints?
+Why using constraints ?
+-----------------------------------------------------
+database is a collection of data.
+table is a collection of data.
+table consists of many rows and records.
+========================================================================================================================================
+what & why is MySQL 
+============= > Relation Database Management System.
+
+1. Structure
+2. Querey Language
+3. Indexing 
+4. Concurrency
+5. Integrity
+6. Scalability
+
+NUMERIC DATATYPE
+================
+INT , TINYINT, SMALLINT,MEDIUMINT ,BIGINT,FLOAT(m,d),FLOAT(m,d)
+DOUBLE(m,d)
+
+DATETIME
+=========
+DATE ,DATETIME,TIMESTAMP,TIME,YEAR
+
+STRING TYPE
+============
+VARCHAR(size) variable length
+exapmle:- varchar(100)
+		"BALA" -- it store for 4 char. not consider that remining.
+
+TINYTEXT(size)
+
+TEXT(size)
+
+
+MEDIUMTEXT(size)
+
+LONGTEXT(size)
+
+BINARY(size)
+
+VARBINARY(size)
+
+CHAR(size) fixed length
+example:- char(5)
+           "BALA " -- so it take as space for the last char
+ 
+BLOB-Binary Large Object File(LOB)
+		 ========================
+
+--------------------------------------------------------------------------------------------------
+
+/*shown the list of databases available  */ 
+SHOW DATABASES;
+
+		
+/*newly create the database use this syntax */
+CREATE DATABASE logicfirst;
+
+/* have use the database after created */
+USE logicfirst ;
+
+/* Delete data base 
+DROP DATABASE logicfirst;  */
+
+/*newly want to create table use this syntax */
+CREATE TABLE student
+(id INT PRIMARY KEY, name VARCHAR(30),gpa DECIMAL(3,2));
+
+
+/* show the table detaily by using the syntax */
+DESCRIBE student;
+
+
+/* for add the new column in table */
+ALTER TABLE student ADD department VARCHAR(20);
+
+
+/* for DELETE the ANY column in table ; HERE DELETE department column */ 
+ALTER TABLE student DROP department;
+
+
+/* after create a table then give the values */
+INSERT INTO student VALUES(1,"bala",7.6);
+
+-- another way to insert values
+INSERT INTO student VALUES(  (1,"bala",7.6),(2,"kumar",8.6)),
+(3,"aslin",9.6),(4,"rajan",5.6)  );
+
+
+/* if u needed add only 2 value in existing columns*/
+INSERT INTO student(id,name) VALUES(5,"RAJ");
+
+
+/*want see the entire table and values */ 
+SELECT * FROM student;
+
+
+
+------------------WHERE clause and conditions----------------------------------------------------
+
+WHERE ==> is used for filtering the rows before grouping;
+/* giving the condition and filtering the data by using where keyword */ 
+SELECT * FROM student WHERE id = 4;
+
+CONTITIONS USED 
+---------------
+> , < ,<= ,>= ,!= , <> 
+, NOT ,IN , LIKE ,BETWEEN , LIMITS , WILDCARDS ,NOT IN
+AND , OR 
+
+LIKE ==> is used to search the specific pattern in a column ; 
+its used with WHERE clause;
+
+WILDCARDS (ZERO or MORE CHARACTORS)
+-----------------------------------
+% , \ , _
+
+example : -
+-------------
+S% ==> what are the names starts from 's' in column that and all displayed; 
+
+%E ==> what are the names ends with 'E' in column that and all displayed;
+
+% M % ==> in between middle of the word its display the name;
+
+/%   => if used the % as a used data in table at the time we use the backword used;
+
+
+UPDATE
+=======
+UPDATE tableName 
+SET name="bala"
+WHERE name="kumar" ;     here bala changed instead of kumar.
+
+DELETE
+========
+DELETE FROM tablename
+WHERE E_id=1;			here id = 1 entire row was deleted.
+
+
+Distinct , order by 
+===================
+
+SELECT DISTINCT salary id from tablename ; ---> here not visible the repeated salarys ;
+
+SELECT * FROM tablename
+ORDER BY Ename DESC; --> here ename are show in descrending order
+
+
+Function in SQL ==> PERFORM A SPECFIC TASK
+===============
+
+COUNT ==> total count get by this COUNT function.
+
+SUM ==>  
+
+AVG ==>
+
+MIN ==>
+
+MAX ==>
+
+String
+=======
+
+UCASE( ) -->change to upper case letter.
+
+CHAR_LENGTH( ) --> count the charactor in-side the cell.
+
+CONCAT( )--> joining the new charactor with the existing data.
+
+FORMAT( )  --> 
+
+LEFT (job_desc,4)  --> First 4 charactor displayed.
+
+Date and Date Functions
+=======================
+
+SELECT NOW( );
+--> it shows the current date and time; '2023-01-02 14:32:50'
+
+SELECT DATE( NOW());
+ Its display current date only ;2023-01-02
+
+select CURDATE();
+Its display current date only ; 2023-01-02
+
+SELECT DATE_FORMAT( CURDATE(),"%d.%m.%Y" );
+-->  CUSTOMIZED DATE 
+I need to CHANGE the 02-01-23 instead of 02.01.23
+
+SELECT DATEDIFF( CURDATE(),'2020-01-01') AS DAYS (OR) AS DATE;
+==> dispaly in between days OR date 
+
+SELECT DATE_ADD( CURDATE(),INTERVAL 1 DAY),
+ 	 DATE_ADD( CURDATE(),INTERVAL 1 WEEK),
+	 DATE_ADD( CURDATE(),INTERVAL 1 MOMTH); ==> Interval betwn
+	
+
+Group By and Having
+====================
+GROUP BY ==> Group By is used for group the table based on condition and using aggergated
+Functions.
+
+
+
+HAVING ==> having is used for filtering the GROUP BY .
+
+
+		
+Constraints
+===========
+
+NOT NULL ==> null value cannot be insert in the column.
+
+DEFAULT ==>  set default when not mentioned.
+
+UNIQUE ==> duplicates not allowed.
+
+ADD CHECK (ANY CONDITION) ==> according to given special condition only allowed to insert data.
+
+AUTO_INCREMENT ==> automatically squencence of number genrate.
+
+
+Add constraints in the Exsisting table 
+---------------------------------------
+
+MODIFY 
+
+SET DEFAULT
+
+DROP DEFAULT
+
+ADD CHECK
+
+CONSTRAINT
+
+ADD CONSTRAINT CHECK
+
+
+FOREIGN KEY
+============
+
+FOREIGN KEY REFERANCES
+
+				
+DROP FOREGIN KEY
+
+
+
+INDEX ==> 
+=====
+
+notes:- foregin key , Primary key , unique are consider as a index.
+SHOW INDEX FROM tablename;
+
+CREATE INDEX ON
+
+DROP INDEX
+
+ADD INDEX
+
+
+
+ON DELETE
+=========
+
+ON DELETE SET NULL ==> not delete the row but replace it as null.
+
+CASCADE ==> delete the entire row in both table.
+
+
+
+JOINS
+======
+INNER JOIN
+
+RIGHT JOIN
+
+LEFT JOIN 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

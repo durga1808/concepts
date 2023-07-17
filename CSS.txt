@@ -1,0 +1,550 @@
+CSS 
+===
+CSS means different styling giving the normal HTML tags.
+
+CSS structure 
+============
+p ------------------------------------> selector
+      { 
+		font-size:  10px ;
+           ---------->  ---->
+		property :  value unit ;
+       }
+
+
+CSS Fonts properties
+====================
+
+font-family: times Roman (font name)
+font-weight: normal(normal to bold)    
+font-style: bold (style of text)
+font-variant: small-cap (small to caps)
+
+font-size: 10px; (size with unit)
+color: blue; (color of the text)
+font: bold 10px Arial;(3 different properties in single line)
+
+
+CSS Backgrounds properties
+=========================
+background-color:blue;
+background-image: url(image.png');
+background-repeat: repeat,no-repeat, repeat-x,repeat-y;
+
+background-size: (width)1500px (height)750px , cover ,contain;
+background-position: top center , top left , top right , bottom left , bottom center  ,bottom right;
+background:transparent |color ||url ||repeat ||scroll|| position
+
+
+background-attachment : scroll; ==>  page is scroll
+background-attachment : fixed; ==> text only scroll
+		
+background-orgin: padding-box;  ==> start from padding
+background-orgin: content-box;  ==> start from content
+background-orgin: border-box;   ==> start from border
+
+color:transparent;
+background-clip: text;
+-webkit-background-clip: text;
+
+gradient colors
+===============
+background:linear-gradient();====> mostly used
+background:repeating-linear-gradient();
+
+background:radial-gradient();
+background:repeating-radial-gradient();
+
+background:conic-gradient();
+background:repeating-conic-gradient();
+
+background-blend-mode:overlay; ====> mostly used
+background-blend-mode:normal,screen,darken,hard-light,soft-light,multiply,color-burn,difference,exclusion,hue,color,saturation,luminosity;
+
+
+
+opacity:0.5; ==> 50% brightness shown (like blur)
+opacity: 1; ==> 100% brightness normal
+
+text properties in css
+======================
+letter-spacing: 10px;
+text-decoration: overline, underline,linethrough;
+vertical-align: sub , super;
+text-align: left,right,center,justify;
+text-indent: length,percentage;
+line-height: normal,number,length,percentage;
+text-transform: capitalize,uppercase,lowercase;
+
+list properties in css
+======================
+list-style-type:upper-alpha,disk,square,decimal,circle,decimal-leading-zero,lower-roman,upper-roman,upper-alpha;
+
+
+list-style-image: url(image.png);
+
+resize list style image in CSS 
+---------------------------------
+ ul li{
+        list-style-type: none;
+     }
+                       
+ ul li::before
+   {
+    content: '';
+        display:inline-block ;
+        margin-right: 10px;
+        width: 10px;
+        height: 10px;
+        background-image: url('google.png');
+        background-size: cover;
+                        }
+
+list-style-position: inside,outside 
+
+margin properties in css
+========================
+notes:- 
+padding is used for giving inner space.
+margin is used for giving outer space of the content.
+
+this for individual sides
+margin-top: value;
+margin-right: value:
+margin-bottom: value;
+margin-left: value;
+
+this for shorthand property
+margin: value (all sides);
+margin: top right bottom left;
+margin: vertical(top,bottom) horiontal (left,right);
+
+padding-->individual sides
+padding-top: value;
+padding-right: value:
+padding-bottom: value;
+padding-left: value;
+
+padding-->shorthand property
+padding: value (all sides);
+padding: top right bottom left;
+padding: vertical(top,bottom) horiontal (left,right);
+padding: top horizontal bottom;
+
+Borders properties
+=====================
+border-top-width: value;
+border-right-width: value;
+border-bottom-width: value;
+border-left-width: value;
+
+border-top-color: blue;
+border-right-color: red;
+border-bottom-color: green;
+border-left-color: brown;
+
+border-top-style: double;
+border-right-style: outset;
+border-bottom-style: solid;
+border-left-style: inset;
+
+border: thin solid blue;
+
+
+Selectors properties
+=======================
+multiple selector
+-----------------
+ h1 ,p , .classvalue{color: red}
+
+
+attribute selectors
+---------------------
+div[class]
+a[href="test.png"]{ color: blue; }// attribute value 
+a[href$="g"]{ color: red; } // attribute value end of the char
+a[href^="t"]{ color: green; } // attribute value start of the char
+
+single selector 
+---------------
+	* {  } // univeral selector
+	element { }
+	.classvalue{ }
+	#idvalue { }
+
+combination selectors
+---------------------
+
+            parent child grandchild { } // descendand
+example :- .box p span { color: red; font-weight: bold; }
+
+            parent > directchild { }    // direct child
+example :- .box > p { color: blue; }
+
+		parent + sibling  { }      // select by siblings
+example :-  div + div { color: blue; }
+
+		element ~ direct-siblings { } //General Siblings
+example :- .box ~ p { color: red; }
+
+display properties
+===================
+display: block , none , inline-block , inline;
+
+display table in css
+====================
+
+
+parent and child in css
+=======================
+<body> ==> parent
+     <div> ==> child for body tag
+		<p>  </p> ==> grand child for body tag
+		<h1> </h1>
+     </div>
+
+style preferance in css
+=======================
+1. #id 
+2. .classvalue
+3. normal element
+if the even though need the element as first poriorty
+ means "!important" used it.
+
+pseudo class in css Anchor tag
+===============================
+a:hover{color: red;}
+a:active{color: green;}
+a:visited{color: blue;}
+
+:root pseudo selector
+=====================
+example:- 
+-----------
+:root{
+--bgc: blue;
+--textcol: black;}
+.box{
+background:var(--bgc);
+}
+h1{
+font-color:var(--textcol);
+}
+
+pseudo class selector / first-child / last-child
+================================================
+if use the selector , need parent for the child then only able to
+to use 
+example:- 
+#id(or).classname parenttag: first-child(or)last-child{ color: blue;}
+
+pseudo class selector / :nth-child() / :nth-last-child() / :nth-of-type()/ :nth-last-of-type()
+==============================================================================================
+nth-child()===> starts from first element
+nth=n==> 0,1,2,3,4......
+2n   ==> 2*0=0; 2*1=2; 2*2=4; 
+2n+1 ==> 0+1=1; 2+1=3; 4+1=5;
+2n-1 ==> 0-1=1; 2-1=1; 4-1=3;
+example:- 
+#list_one li:nth-child() {
+            font-size: 35px;
+            background: grey;
+                }
+
+nth-last-child()==> starts from last element , so last element is the 
+first element
+example:- 
+#list_one li:nth-last-child() {
+            font-size: 35px;
+            background: grey;
+                }
+
+:nth-of-type() ==> without the parent element we have to select the element 
+
+:nth-last-of-type()==>without the parent element we have to select last element.
+ example:-  p:nth-last-of-type(1)===> it select the last element
+
+:only-child ==> when only one child have for a parent that one child element select.
+if more than one child is there means not select the element.compulsory parent element needed.
+
+:only-of-type ==> but here no need the parent element
+ , but only one child element needed in the entire document.
+
+:first-of-type ==> with parent or without parent
+ able to select the first element or first child element.
+
+:last-of-type ==> with parent or without parent
+ able to select the last element or last child element.
+
+:empty ==> select the empty element, if give the space that also charactor.
+example:- <p></p> 
+<style>
+      p:empty{ border: golden; }
+<style>
+    
+:not()
+:lang()
+
+
+
+Access child items in css
+========================
+ul li:first-child {color:red;}
+ul li:last-child {color:yellow}
+ul li:nth-child(3){color:green}
+ul li:nth-child(odd or even){color:green}
+
+border raduis in css
+====================
+border-radius: 10px;
+border-radius: 0px 0px 0px 0px;
+
+colors in css
+=============
+background: hexa decimal values  or RGB (255 ,0 ,0)values;
+background: hexa decimal values  or RGBA (255 ,0 ,0.0.5 opacity)values;
+
+https://color.adobe.com/create/color-wheel
+box shadow in css
+=================
+box-shadow: 10px    10px       5px           0px   blue;
+            vertical horizontal widthofshadow spilt color
+
+chessBoard create in css
+=========================
+html{
+background: grey;
+}
+body{
+background: white;
+width: 800px;
+height: 800px;
+}
+.row{
+width: 100%;
+height: 100px;
+float:left;
+}
+.box{
+width: 100px;
+height: 100px;
+float:left;
+}
+.black{
+background: black;
+}
+======================================================================
+				CSS LAYOUT DESIGN 
+				=================
+Box Model in CSS
+-----------------
+
+position properties
+-------------------
+      1. static position property 
+             => it's default values.not affected the top,bottom,right,left.
+
+      2. relative position property
+		  => able to move the position from the normal property ; possible to shift the element.
+
+	 3. absolute position property
+            => left,right,top,bottom & relative used in positioning.
+
+	4. fixed position property.
+		=> inside the document any where able to move the element.
+
+	5. sticky position property.
+		=> used in navigation bar.
+
+z-index in css
+===============
+
+outline in css
+==============
+
+min-height & max-height in css
+===============================
+
+min-width & max-width in css
+============================
+
+
+*Box-sizing in css
+=================
+
+overflow in css 
+===============
+
+column in css
+===============
+
+
+
+css units 
+=========
+==> used for width,height,font-size only
+Absolute units 
+---------------
+px
+
+relative units
+--------------
+==> always depends on the parent units
+%
+em ==> depends on direct parent element or root element (html).
+em is 16px default size ; base size in browser sitting;
+       1em x 16 = 16px;
+ 	 2em x 16 = 32px;
+ 
+rem ==> root em ==> depends on root element (html) or browser
+ it according to parent (html tags)work,suppose html not have any 
+ property means it takes from browser properties.
+
+veiwport width ==> its device width size ; not browser size  
+
+viewport height ==> its device height size ; not browser size 
+
+vmin  veiwport min % 
+example:- width:20vmin; ==> from 100% take the 20 vmin percentage
+
+vmax  veiwport max % 
+example:- width:50vmax; ==> from 100% take the 50 vmax percentage
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CSS Flex Container Properties
+=============================
+
+display
+=======
+     
+display : flex;
+
+display : inline-flex;
+
+flex-direction	
+==============
+
+flex-direction : row;
+
+flex-direction : row-reverse;
+
+flex-direction : column ;
+
+flex-direction : column-reverse ; 					
+
+flex-wrap
+=========
+
+flex-wrap: wrap ;
+
+flex-wrap: nowrap ;
+
+flex-wrap: wrap-reverse ;				
+
+flex-flow
+=========> combination of flex-direction , flex-wrap properties 
+example:- 
+      flex-flow: row nowrap;
+
+gap
+=====>row and column both can give the gap by single property
+example:- 
+
+gap: 40px;
+
+gap: 10px 45px;
+
+row-gap: 20px; ==> only give the row gap between 2 items
+
+column-gap: 20px; ==> only give the row gap between 2 items
+
+justify-content
+================>it working for  for Main axis alignment.
+			 row Main Axis => x-axis 
+			 column Main Axis => y-axis
+
+justify-content: center;
+
+justify-content: space-start;  --> default
+
+justify-content: space-end;
+
+justify-content: space-evenly;
+
+justify-content: space-between;
+
+justify-content: space-around;
+
+
+align-content
+=============
+align-content: stretch;
+
+align-content: flex-start;
+
+align-content: center;
+
+align-content: flex-end;
+
+align-content: space-between;
+
+align-content: space-around;
+
+
+align-items
+============> it working for  for Cross axis alignment.
+		      row Main Axis => y-axis 
+			 column Main Axis => x-axis
+
+align-items: stretch;==> it's default properties
+
+align-items: flex-start;
+
+align-items: flex-end;
+
+align-items: center;
+
+align-items: baseline;
+
+css flex item properties
+========================
+
+flex-grow
+===========> grow used to increase the size.
+flex-grow: 1 ; --> default is 1
+
+
+flex-shrink
+============> decrease the size.
+flex-shirnk: 1;  --> default is 1
+
+flex-basis
+============> need fixed size for particular item  
+flex-basis: auto; default value
+flex-basis: 400px;
+
+flex (flex-grow,flex-shrink,flex-basis)
+====
+
+flex: 0 1 auto; => default values
+     
+
+order
+=====> position the box by using the order.
+order:3;
+
+
+align-self
+
+
+
+
+
+
+
+
+
+
+
+

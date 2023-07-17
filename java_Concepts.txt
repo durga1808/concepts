@@ -1,0 +1,99 @@
+java.io.streams                  vs      java.utils.stream both are diff
+ fileinputstream read from excel          stream() in java 8 
+
+Stream API's
+--------------
+collection  => grouping the element or objects.
+
+stream() => process the elements or objects from the collection.
+
+
+filter() => select the element in the stream and predicate show it example:- 10 element is there it shows the even number
+           this method process the data inside the stream.
+		purpose filter by some condition and store it other place or used that data it some where place 
+		return type boolean
+
+map()  => it transform one type to other type.example :- string to size of string 
+          take the element from the stream then do some operation
+           and store the element in some place. 
+			
+
+aslist()
+stream()
+parallelStream()
+limit()
+filter()
+
+Maps & Hashmap
+--------------
+map ==> collection of entry
+
+put() ==> add new entry or pair into hashmap
+
+putAll() ==> multiple map add into single map
+
+get()  => return the value.
+
+remove() => remove the particular entry or pair
+
+containsKey(key)  => return boolean.if the key is there return true or false.
+
+containsValue()  => if the value is there return true or false.
+
+isEmpty()    =>in hashmap is entry are is there or not.return boolean.
+
+size()    => how many entery is there it should show.
+
+clear()  => remove all the entry present in map.
+
+keySet() ==> get the all keys only(keys not allow thw duplicate that y method name as set)
+             return set
+
+values() ==> get the values, not keys.
+		  return collection
+
+entryset() ==> get the keys and values.
+		   return set
+
+
+entry interface => (subset of hashmap class)
+---------------
+
+getKey()  => it return the key.
+
+getValue() => it return the value 
+
+setValue()  => it replace the value or set new value in specific key.
+
+
+method reference and constructor references
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

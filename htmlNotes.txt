@@ -1,0 +1,260 @@
+HTML ==> Hyper Text Markup Languages
+====================================
+html elements are defined by a start tag,some content and end tags
+some tags are not have end tags ,empty element and no content 
+example:- like <br> ===> line break
+html not have case senstive
+example:- <p>  =====> <P>
+-----------------------------------------------------------------------------------------------------------------------
+<a> used for create the hyperlink
+<a href ="https://translate.ga&op=translate">google translator </a>
+--------------------------------------------------------------------------------------------------------------------------
+<img> is used for showing the img in webpage
+attributes are src (source)and alt (alternative)
+there is no need of closing tag
+-----------------------------------------------------------------------------------------------------------------------------
+<button> </button>  this tag is used to create the button in web page
+----------------------------------------------------------------------------------------------------------------------------
+tooltips means mousehover to the element one label should view that's tool tip
+where you insert the title attribute in the opening tag the tool
+example:- <p title="I'm a tooltip">Mouse over this paragraph, to display the title attribute as a tooltip.</p>
+----------------------------------------------------------------------------------------------------------------------------
+<meta charset="UTF-8"> it contain inside the head tags
+UTF-8==> Unicode Transformation Format – 8-bit
+meta ==> meta means data inside another data
+unicoding means ==> char to ASCII value
+encoding means ==> converting to binary(0 1)
+---------------------------------------------------------------------------------------------------------------------------------------
+<hr>horizontal rules , no closing tag because there is no content
+<br> line should break , no closing tag because there is no content 
+-------------------------------------------------------------------------------------------------------------------------
+<pre>  pre defined format==> used to what are the content gave same response gave
+ example:- poem format </pre>
+
+<code> programming code </code>
+
+<var>  varabiles </var> 
+
+<em> Emphasize is used for italic style text</em>
+
+<strong> bold or important text </strong>
+
+<mark> Highlight the text </mark>
+
+<del> strike out the text </del>
+
+<blockquotes cite="url">it is used to hide the url in the text<blockquotes>
+
+<q>this is used to give the right and left double quotes</q>
+
+<abbr>abbrivation of the text shown in tolltips</abbr>
+
+<bdo dir="rtl">  bdo==> bi-directional override dir==>direction
+                rtl , ltr => rightside to leftside ,leftside to rightside </bdo>
+
+<details> inside use the <summary> tag.it visible heading only after click the heading the 
+details should displayed </details>
+
+ 			
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+HTML styles
+=============================================
+syntax :- <tagname style="property:value;">  |
+=============================================
+
+<p style="color:red;">color for text </p>
+
+
+<p style="font-family:courier;">font-family==>for text styling </p>
+
+ 
+<h1 style="font-size:300%;">font-size for text</h1>
+<p style="font-size:50px;">I am big</p>
+
+text-alignment==> for text position of the (left or right or center )place.
+example:- <h1 style="text-align:center;">Centered Heading</h1>
+
+entire page background should change the color
+example:- <body style="background-color:powderblue;">
+
+particular text only background colored.
+example:- <h1 style="background-color:powderblue;">heading as a text</h1>
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+HTML tables
+============
+<table> , <thead> , <tbody> , <tfoot> ,  </tfoot> ,  </tbody> , </thead> ,</table>
+<caption> </caption>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+HTML CSS (cascading style sheet)
+========
+inline css means style attributes used inside the tags itself
+internal css means <style> used in between <head>
+external css means <link rel="stylesheet" href="styles.css"> used in between <head> 
+
+HTML Links
+==========
+<a> anchor tag is used for hyperlinks </a>
+along with title give in that means tooltip shown here.
+<button onclick="document.location='https://click the button then navigate to page'">
+  click the link button</button>
+
+HTML Block and inline elements
+==============================
+Block Element means occupy the entire width taken.example 
+
+<address> <article> <aside> <blockquote> <canvas> <dd> <div> <dl> <dt> <fieldset> 
+<figcaption> <figure> <footer> <form> <h1>-<h6> <header> <hr> <li> <main> 
+<nav> <noscript> <ol> <p> <pre> <section> <table> <tfoot> <ul> <video>  <p>
+----------------Block level elements----------------------------------------------------------------------------------------------------------------------
+inline Element means it occupy the particular element width <span>
+<a>  <abbr> <acronym> <b> <bdo> <big> <br> <button> <cite> <code> <dfn> <em> 
+<i> <img> <input>  <kbd> <label> <map> <object> <output> <q> <samp> <script> 
+<select> <small> <span> <strong> <sub> <sup> <textarea> <time> <tt> <var>
+----------------inline elements--------------------------------------------------------------------------------------------------------------------------------------
+HTML Classes
+============
+.classvalue{color:black;}
+
+HTML Id
+========
+#idvalue{color:black;}
+
+HTML Layout
+============
+
+HTML Forms
+==========
+<form action="/action_page.php"> 
+is used for collecting user inputs. 
+contains have many input elements button ,input text box ,check box, radio button.
+<label for="fname">firstname</label>
+<input type="text" id="" name="" value="">
+</form>
+HTML Form Elements
+==================
+<form action="/action_page.php">
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat" selected>Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <input type="submit">
+</form>
+
+<textarea name="message" rows="10" cols="30">descripe with in 30 words.</textarea>
+
+Alert pop-ups
+-------------
+<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+output tags
+--------------
+<form action="/action_page.php"
+oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range" id="a" name="a" value="50">
+  100  +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+
+HTML Input Types
+=================
+<input type="button">
+used to create the alert pop-ups.
+notes:- along input tags used the attributes
+         ==>onclick="alert('Hello World!')" value="Click Me!"  
+
+<input type="checkbox">
+zero to every choice able to select and deselect.
+
+<input type="color">
+
+<input type="date"> 
+ dd-mm-yyyy input for date fields only. min and max attribute able to use it.
+
+<input type="datetime-local">
+ no time zone and dd-mm-yyyy hr:mins am/pm
+
+<input type="email"> 
+it depends upon the browser support by validating the email address after click the submit.
+
+<input type="file"> 
+used for browse the file and uploading it.
+
+<input type="hidden">
+
+<input type="image">
+image as a click button used attributes is src== source path , width=imagesize , height=imagesize
+
+<input type="month"> 
+it is used to fill the month and year example: June , 2022
+
+<input type="number">
+only able to enter the number
+notes:- if use the min and max attribute to restriction the numbers
+
+<input type="password"> password field in bullets
+
+<input type="radio"> 
+in the choice only one able select it.
+notes:- make the name value as common.
+
+<input type="range">
+it is look like volume increasing option.
+
+<input type="reset">
+ after click the reset btn form-data values are changed into default values.
+
+<input type="search">
+seach text box and inside have close icon for clear the input data.
+
+<input type="submit"> 
+in the form field used the submit/ default value attribute is submit
+
+<input type="tel">
+
+<input type="text"> 
+normal text field 
+
+<input type="time">
+hours and mints should dispaly
+
+<input type="url">
+actual validate by the browser support. 
+
+<input type="week">
+week 1 to 53 , yyyy shown
+
+attributes used in input tag like disabled ,readonly=>able to copy but not able to modify, max , min ,
+size=> increasing the text box length,step,value,required=>make it as mandatory field,pattern=>is used in phone number text box
+
+HTML Input Attributes
+=====================
+notes:- every attributes used in the form tag
+
+action="/action_page.php" => is used to after fill form-data then click the submit button , then only 
+perform the action.
+
+target="_blank"==> open in other tab,"_self" ==> default is self ,"_parent" ,"_top"
+
+method="post"  it not shown the form value in the address bar
+method="get" it shown the form value in the address bar
+
+autocomplete="on" "off" it is used to when u start to type
+    at the time automatically pridict value and give the suggestion.
+
+rel==> used to give relationship between current document and linked resources.
+
+---------------------------------------------------------------------------------------------------------------------------
+Nested HTML Element 
+===================
+one element contains other element is called as Nested Element
+
+
+=======================================================================================================================================

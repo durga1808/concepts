@@ -1,0 +1,816 @@
+password :- rajibalan1994
+
+
+git :- distributed version control system - multiple version of code history are stored.
+======
+
+what is git and github
+=======================================================================================================================================================================================
+
+Git is a version control system that helps manage and track changes in software development projects. 
+
+It allows developers to collaborate on code, keep track of different versions, and revert back to previous versions 
+
+if necessary.
+
+
+GitHub, on the other hand, is a web-based platform that provides hosting services for Git repositories. 
+
+It is a community of developers and developers can use GitHub to store and share their code,
+ 
+as well as to collaborate on projects with other developers.
+
+
+For example, imagine you're working on a software project with a team of other developers.
+ 
+You might use Git to manage the code locally on your own computer and then use GitHub to store the code online 
+
+so that other members of your team can access it, make changes, and contribute to the project.
+
+
+ GitHub provides tools to help you track issues, discuss changes, and review code, 
+
+making it easier for you to collaborate and stay organized.
+
+=================why github============================================================================================================================================================
+
+Developers use GitHub because it provides a central place to store, share, and collaborate on code.
+tracking the issues , tracking changes of code, 
+
+1. version control 
+2. collaboration 
+3. Documentation.
+======================================================================================================================================================================================
+
+ls ==> list of project in ur local repository,it should display.
+
+cd ==> 
+
+dir ==>
+
+
+
+git 							     ==> this command is used to git tool is installed in the local m/c
+
+git --version 					     ==> ensure git tool is installed or not.
+
+git remote add origin <remote_repo_URL>        ==> connect to remote.(origin is name of the URL)
+
+git remote remove origin			     ==> disconnect to remote.
+
+git remote set-url origin <give the url>     	 ==> need to change repo from one repo to other repo.
+
+git remote -v 					     ==> this command is used to check the current url repo.
+
+git clone <repo url>   					==> what the existing codes are downloaded.
+
+git add <.\filename> 					==> track the particular file only for any changes or push or pull..
+
+git status 							==> commit,push and pull details shown.
+
+git commit -m "message" 
+				    			      ==> commit and add
+git commit -am "message" 
+
+git push  							==> upload the file to golobal repo.
+
+git pull  							==> download the file to local repo.
+
+git fetch  ==>  Retrieves the latest changes from a remote repository without merging them into your local branches automatically.
+
+git clone  ==>          Creates a new local repository by copying an existing remote repository.
+
+conflicts
+=========
+
+When two or more developers modified the same file , when devloper-1 one push the file to GitHub will not get any conflicts ,
+
+ but devloper-2 try to push the same file to GitHub , will get git Conflicts (because that file already modified by dev-1)
+
+ 
+
+Solution: Before push any file to GitHub, we should mandatorily Pull the Project & select merge option, 
+
+          then eclipse automatically merge the Code with comments]&  remove comments manually & analyse the code then push it.
+
+
+=================================================================================================================================================================================
+
+
+git branch commands
+-------------------
+
+git branch   						=> list of branches shown
+
+git branch -a						=> list of all branches including remote branch
+
+git branch -r						=> list of remote branches
+
+git branch <new branch name> 			      => create new branch with specified name
+
+git branch -m <modify the branch name>  	      => rename the current branch name
+
+git checkout <give existing branch name>              => swtich to specified branch name
+
+git checkout -b <branchname>			      => creating new branch  and switch to new branch
+
+git branch --no-merged				      => list of non merged branches shown
+
+git switch
+
+==================================================================================================================================================================================
+
+git merge commands (fast-forward merge & 3-way merge)
+------------------
+notes :- 
+        *In fast-forward merge there is no conflict. because no changes in master branch,so that other branch easy to merge with the master
+
+	   *3-way merge had conflict. because both branch parallel changes doing , so when merge to master conflict occur.
+
+git merge 	<branch name>			              => merge the from current branch to specified branch
+
+git remote 						      => show the list of url remote repo.
+
+=====================================================================================================================================================================================
+git diff commands
+------------------
+
+
+-----------> working Directory -----------------> Staging -------------------> Local Repository
+		 ( or work space)				(git add .)			    (local m/c)	
+
+
+git log --oneline			 	       ==> this command used for show all commits in the branch									
+
+git diff						 ==> this command is used to compare the file inside the version control system
+
+git diff index.txt 				 ==> this command compare working directory and staging area
+
+git diff HEAD index.txt (* last or latest commit refferd using HEAD)		 
+							 ==> this command compare working directory and last commit
+
+git diff --staged HEAD index.txt 	 ==> this command compare staged and last commit
+
+git diff 7e38786 index.txt        	 ==> this command compare specific commit and working dir copy.
+
+git diff --staged 06f1f76  		 	  ==> this command compare specific commit and staging area copy.
+
+git diff 06f1f76 7e38786 		 	  ==> this command compare 2 different commits.
+
+git diff master devBranch		 	  ==> this command used to compare the local two branches 
+
+git diff master origin/master		 ==> this command used to compare local branch with remote repo
+
+=================================================================================================================================================================================
+
+git rm commands
+---------------
+need to show the working area file     ==> ls
+
+show the staging area files		   ==>  git ls-files
+
+git rm file1.txt ==> remove the files in staging & working directory
+
+git rm --cached file1.txt ==> need to delete the specific file from the staging area.
+
+rm file3.txt		==> need delete the specific file from the working directory.
+
+==================================================================================================================================================================================
+
+git reset commands  (mixed=>(default mode) remove from local and staging / soft => remove from the local /
+------------------     hard => remove permently from local,staging area & working dir)
+
+
+git reset index.txt  => the file to remove in the staging area.
+
+syntax :-   git reset <mode> <commit id>
+---------
+
+git reset --mixed af3c941 => in command specificed commit id above all are remove from the local repo and staging area.* able to revert by git add . ; git commit -m " "
+					 
+
+git reset --soft  912c9c7  =>  in command specificed commit id above all are remove from the local repo.* able to revert by git commit -m "  "; 
+
+git reset --hard af3c941  => in command specificed commit id above all are remove from the local repo , staging area & working dir.* not able to revert because discard from everywhere.
+
+===============================================================================================================================================================================
+git restore --staged <file>   		 =>
+
+git log						=>
+
+git stash
+
+git stash pop
+
+=========================before rebase & after rebase===========================================================================================================================
+
+$ git log --oneline master
+ddaaf16 (HEAD -> master) c3m
+c99ef06 c2m
+721e6f2 c1m
+
+
+$ git log --oneline feature
+b8d6702 (feature) c2f
+b2002bb c1f
+c99ef06 c2m
+721e6f2 c1m
+
+
+$ git log --oneline feature
+1a00498 (HEAD -> feature) c2f
+5277770 c1f
+ddaaf16 (master) c3m
+c99ef06 c2m
+721e6f2 c1m
+
+==========================================================================================================================================================================
+
+git branching star
+
+git trunk base develop
+
+git flow 
+=============================----------------------------------======================================
+
+git branching strategy or model
+--------------------------------
+
+types
+-----
+git Flow
+
+github flow 
+
+trunk-based develpment
+
+=======================================================================================================================================================================
+
+git flow  => Master branch, feature branches, Develop branch, release branch , hotfix branch
+--------
+
+what is git Flow ?
+
+It provides a structured way to manage branches for different stages of development, including development, testing, and release. 
+
+
+why using git Flow ?
+
+Easy to manage releases: Allows teams to work on multiple versions of code in production at the same time.
+
+Reduced conflicts:  reducing the risk of conflicts and mistakes.
+
+
+how to use the git flow ?
+
+intialise the git flow 	: git flow init => it gives setup the sturute of the project
+
+create a feature branch  	: git flow feature start => create the feature branch.
+
+Develop the feature   	: work on the feature branch and develop the feature.
+
+merge a feature branch	 : git flow feature finish => merge the feature branch back into the Develop branch.
+
+create a release branch    : git flow release start => create a release branch.
+
+test the release         :  work on the release branch and test it througly.
+
+merge a release branch 	: git flow release finish => merge the release branch back into the develop and master branch.
+
+create a hotfix branch 	: git flow hotfix start => create a hotfix branch.
+
+work on the hotfix branch and test througly, after that deploy in the production.
+
+merge a hotfix branch 	: git flow hotfix finish => merge the hotfix branch back into the develop and master branch.
+
+
+when use the git flow ?
+
+Git flow is particularly useful for projects that require multiple versions of code in production at the same time, such as projects with long release cycles
+ 
+It is also useful for teams that work on complex projects with multiple contributors.
+
+=======================================================================================================================================================================
+
+
+GitHub flow  => main (master)branch,feature branches
+-----------
+
+What is GitHub flow?
+
+GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+
+
+
+Why use GitHub flow?
+
+It ensures that code is reviewed and tested before it is merged, which helps prevent bugs and errors from being deployed to production.
+
+this Git branching strategy allows for Continuous Delivery and Continuous Integration.
+
+
+
+when to use github flow ?
+
+GitHub flow is best suited for projects that have frequent deployments 
+
+
+how it's work ?
+
+1. create branch
+
+2.Add commit
+
+3.Open a Pull Request
+
+4.Discuss and Reveiw
+
+5.Merge 
+
+6.Deploy
+
+=======================================================================================================================================================================
+
+
+trunk-based development  (trunk or master branch,other feature)
+-----------------------
+
+what is trunk-based developent ?
+
+trunk-based developent is a software development approch when developers worked in the single code-base and continous integration and deploy their code changes.
+
+This process aims to identify and address integration issues as early as possible.
+
+
+why using the trunk-based development ?
+
+identify the integration issues early and test their code changes in shared environment,make it easier to fix it , avoid divergence in the code base.
+
+
+how to use this ?
+
+code base is maintained in single branch is known as trunk.All development work is done on this branch, and changes are integrated 
+
+into the mainline branch as soon as possible.To make changes, a developer creates a branch off the trunk, makes their changes, and then merges the branch
+  
+back into the trunk.This is often done through a pull request and code review process to ensure the quality and correctness of the changes.
+
+
+when use trunk-based development ?
+
+Trunk-based development is well-suited for projects with a small team of developers who need to move quickly, as it allows for rapid iterations  
+
+and quick feedback on changes.It's also a good fit for projects with a stable codebase, where changes are expected to be small and incremental.
+
+
+=======================================================================================================================================================================
+
+
+git branching strategy or model
+--------------------------------
+
+types
+-----
+git Flow
+
+github flow 
+
+trunk-based develpment
+
+=======================================================================================================================================================================
+
+git flow  => Master branch, feature branches, Develop branch, release branch , hotfix branch
+--------
+
+what is git Flow ?
+
+It provides a structured way to manage branches for different stages of development, including development, testing, and release. 
+
+
+why using git Flow ?
+
+Easy to manage releases: Allows teams to work on multiple versions of code in production at the same time.
+
+Reduced conflicts:  reducing the risk of conflicts and mistakes.
+
+
+how to use the git flow ?
+
+intialise the git flow 	: git flow init => it gives setup the sturute of the project
+
+create a feature branch  	: git flow feature start => create the feature branch.
+
+Develop the feature   	: work on the feature branch and develop the feature.
+
+merge a feature branch	 : git flow feature finish => merge the feature branch back into the Develop branch.
+
+create a release branch    : git flow release start => create a release branch.
+
+test the release         :  work on the release branch and test it througly.
+
+merge a release branch 	: git flow release finish => merge the release branch back into the develop and master branch.
+
+create a hotfix branch 	: git flow hotfix start => create a hotfix branch.
+
+work on the hotfix branch and test througly, after that deploy in the production.
+
+merge a hotfix branch 	: git flow hotfix finish => merge the hotfix branch back into the develop and master branch.
+
+
+when use the git flow ?
+
+Git flow is particularly useful for projects that require multiple versions of code in production at the same time, such as projects with long release cycles
+ 
+It is also useful for teams that work on complex projects with multiple contributors.
+
+=======================================================================================================================================================================
+
+
+GitHub flow  => main (master)branch,feature branches
+-----------
+
+What is GitHub flow?
+
+GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+
+
+
+Why use GitHub flow?
+
+It ensures that code is reviewed and tested before it is merged, which helps prevent bugs and errors from being deployed to production.
+
+this Git branching strategy allows for Continuous Delivery and Continuous Integration.
+
+
+
+when to use github flow ?
+
+GitHub flow is best suited for projects that have frequent deployments 
+
+
+how it's work ?
+
+1. create branch
+
+2.Add commit
+
+3.Open a Pull Request
+
+4.Discuss and Reveiw
+
+5.Merge 
+
+6.Deploy
+
+=======================================================================================================================================================================
+
+
+trunk-based development  (trunk or master branch,other feature)
+-----------------------
+
+what is trunk-based developent ?
+
+trunk-based developent is a software development approch when developers worked in the single code-base and continous integration and deploy their code changes.
+
+This process aims to identify and address integration issues as early as possible.
+
+
+why using the trunk-based development ?
+
+identify the integration issues early and test their code changes in shared environment,make it easier to fix it , avoid divergence in the code base.
+
+
+how to use this ?
+
+code base is maintained in single branch is known as trunk.All development work is done on this branch, and changes are integrated 
+
+into the mainline branch as soon as possible.To make changes, a developer creates a branch off the trunk, makes their changes, and then merges the branch
+  
+back into the trunk.This is often done through a pull request and code review process to ensure the quality and correctness of the changes.
+
+
+when use trunk-based development ?
+
+Trunk-based development is well-suited for projects with a small team of developers who need to move quickly, as it allows for rapid iterations  
+
+and quick feedback on changes.It's also a good fit for projects with a stable codebase, where changes are expected to be small and incremental.
+
+
+=======================================================================================================================================================================
+
+
+git branching strategy or model
+--------------------------------
+
+types
+-----
+git Flow
+
+github flow 
+
+trunk-based develpment
+
+=======================================================================================================================================================================
+
+git flow  => Master branch, feature branches, Develop branch, release branch , hotfix branch
+--------
+
+what is git Flow ?
+
+It provides a structured way to manage branches for different stages of development, including development, testing, and release. 
+
+
+why using git Flow ?
+
+Easy to manage releases: Allows teams to work on multiple versions of code in production at the same time.
+
+Reduced conflicts:  reducing the risk of conflicts and mistakes.
+
+
+how to use the git flow ?
+
+intialise the git flow 	: git flow init => it gives setup the sturute of the project
+
+create a feature branch  	: git flow feature start => create the feature branch.
+
+Develop the feature   	: work on the feature branch and develop the feature.
+
+merge a feature branch	 : git flow feature finish => merge the feature branch back into the Develop branch.
+
+create a release branch    : git flow release start => create a release branch.
+
+test the release         :  work on the release branch and test it througly.
+
+merge a release branch 	: git flow release finish => merge the release branch back into the develop and master branch.
+
+create a hotfix branch 	: git flow hotfix start => create a hotfix branch.
+
+work on the hotfix branch and test througly, after that deploy in the production.
+
+merge a hotfix branch 	: git flow hotfix finish => merge the hotfix branch back into the develop and master branch.
+
+
+when use the git flow ?
+
+Git flow is particularly useful for projects that require multiple versions of code in production at the same time, such as projects with long release cycles
+ 
+It is also useful for teams that work on complex projects with multiple contributors.
+
+=======================================================================================================================================================================
+
+
+GitHub flow  => main (master)branch,feature branches
+-----------
+
+What is GitHub flow?
+
+GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+
+
+
+Why use GitHub flow?
+
+It ensures that code is reviewed and tested before it is merged, which helps prevent bugs and errors from being deployed to production.
+
+this Git branching strategy allows for Continuous Delivery and Continuous Integration.
+
+
+
+when to use github flow ?
+
+GitHub flow is best suited for projects that have frequent deployments 
+
+
+how it's work ?
+
+1. create branch
+
+2.Add commit
+
+3.Open a Pull Request
+
+4.Discuss and Reveiw
+
+5.Merge 
+
+6.Deploy
+
+=======================================================================================================================================================================
+
+
+trunk-based development  (trunk or master branch,other feature)
+-----------------------
+
+what is trunk-based developent ?
+
+trunk-based developent is a software development approch when developers worked in the single code-base and continous integration and deploy their code changes.
+
+This process aims to identify and address integration issues as early as possible.
+
+
+why using the trunk-based development ?
+
+identify the integration issues early and test their code changes in shared environment,make it easier to fix it , avoid divergence in the code base.
+
+
+how to use this ?
+
+code base is maintained in single branch is known as trunk.All development work is done on this branch, and changes are integrated 
+
+into the mainline branch as soon as possible.To make changes, a developer creates a branch off the trunk, makes their changes, and then merges the branch
+  
+back into the trunk.This is often done through a pull request and code review process to ensure the quality and correctness of the changes.
+
+
+when use trunk-based development ?
+
+Trunk-based development is well-suited for projects with a small team of developers who need to move quickly, as it allows for rapid iterations  
+
+and quick feedback on changes.It's also a good fit for projects with a stable codebase, where changes are expected to be small and incremental.
+
+
+=======================================================================================================================================================================
+
+
+git branching strategy or model
+--------------------------------
+
+types
+-----
+git Flow
+
+github flow 
+
+trunk-based develpment
+
+=======================================================================================================================================================================
+
+git flow  => Master branch, feature branches, Develop branch, release branch , hotfix branch
+--------
+
+what is git Flow ?
+
+It provides a structured way to manage branches for different stages of development, including development, testing, and release. 
+
+
+why using git Flow ?
+
+Easy to manage releases: Allows teams to work on multiple versions of code in production at the same time.
+
+Reduced conflicts:  reducing the risk of conflicts and mistakes.
+
+
+how to use the git flow ?
+
+intialise the git flow 	: git flow init => it gives setup the sturute of the project
+
+create a feature branch  	: git flow feature start => create the feature branch.
+
+Develop the feature   	: work on the feature branch and develop the feature.
+
+merge a feature branch	 : git flow feature finish => merge the feature branch back into the Develop branch.
+
+create a release branch    : git flow release start => create a release branch.
+
+test the release         :  work on the release branch and test it througly.
+
+merge a release branch 	: git flow release finish => merge the release branch back into the develop and master branch.
+
+create a hotfix branch 	: git flow hotfix start => create a hotfix branch.
+
+work on the hotfix branch and test througly, after that deploy in the production.
+
+merge a hotfix branch 	: git flow hotfix finish => merge the hotfix branch back into the develop and master branch.
+
+
+when use the git flow ?
+
+Git flow is particularly useful for projects that require multiple versions of code in production at the same time, such as projects with long release cycles
+ 
+It is also useful for teams that work on complex projects with multiple contributors.
+
+=======================================================================================================================================================================
+
+
+GitHub flow  => main (master)branch,feature branches
+-----------
+
+What is GitHub flow?
+
+GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+
+
+
+Why use GitHub flow?
+
+It ensures that code is reviewed and tested before it is merged, which helps prevent bugs and errors from being deployed to production.
+
+this Git branching strategy allows for Continuous Delivery and Continuous Integration.
+
+
+
+when to use github flow ?
+
+GitHub flow is best suited for projects that have frequent deployments 
+
+
+how it's work ?
+
+1. create branch
+
+2.Add commit
+
+3.Open a Pull Request
+
+4.Discuss and Reveiw
+
+5.Merge 
+
+6.Deploy
+
+=======================================================================================================================================================================
+
+
+trunk-based development  (trunk or master branch,other feature)
+-----------------------
+
+what is trunk-based developent ?
+
+trunk-based developent is a software development approch when developers worked in the single code-base and continous integration and deploy their code changes.
+
+This process aims to identify and address integration issues as early as possible.
+
+
+why using the trunk-based development ?
+
+identify the integration issues early and test their code changes in shared environment,make it easier to fix it , avoid divergence in the code base.
+
+
+how to use this ?
+
+code base is maintained in single branch is known as trunk.All development work is done on this branch, and changes are integrated 
+
+into the mainline branch as soon as possible.To make changes, a developer creates a branch off the trunk, makes their changes, and then merges the branch
+  
+back into the trunk.This is often done through a pull request and code review process to ensure the quality and correctness of the changes.
+
+
+when use trunk-based development ?
+
+Trunk-based development is well-suited for projects with a small team of developers who need to move quickly, as it allows for rapid iterations  
+
+and quick feedback on changes.It's also a good fit for projects with a stable codebase, where changes are expected to be small and incremental.
+
+
+=======================================================================================================================================================================
+
+
+git log 
+
+git remote -v
+
+git branch
+
+git config --get init.defaultBranch
+
+git config --get init.defaultBranch mains
+
+git branch -M main
+
+git reset  <classpath>
+
+git log 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
