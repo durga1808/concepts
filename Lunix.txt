@@ -1,6 +1,8 @@
 Linux commands
 ===============
 
+root@LAPTOP-OLBVP6PU:~# =>  cd /mnt/c
+
 mkdir newfolder ==> create a new folder.
 rm -r             ==> delete a dir folder.
 cd \folderName  ==> move forward.
@@ -8,6 +10,7 @@ cd ..		==> one step get back to a folder.
 cd ..\..\..     ==> multiple folders move back.
 cp -r <distination folder or file> ==> copy one folder or file
 mv <file name>  ==> move the file or folder
+mv <current_file_Name>  <dicided_file_Name> ==> rename the file
 
 create a text file
 ---------------------
