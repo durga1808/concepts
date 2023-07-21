@@ -1,3 +1,4 @@
+
 Maven => means knowledge accumulator.
 
 Maven :- configuration mangement tool or Build mangement tool
@@ -28,6 +29,8 @@ mvn install
 mvn deploy
 		this command is used for packaged code deploy in the remote repo , and make it avaliable to other user.
 
+create a maven project(in IDE ctrl +shift+p) :- 
+"mvn org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate -DarchetypeArtifactId="maven-archetype-quickstart" -DarchetypeGroupId="org.apache.maven.archetypes" -DarchetypeVersion="1.4" -DgroupId="com.zaga" -DartifactId="sharedependency""
 
 setting.xml
 ===========
