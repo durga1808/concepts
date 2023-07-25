@@ -3,25 +3,69 @@ Npm(node package manager) => used for any other libraries need to get inside to 
  npm install =>take from package.json & put it in the node_module.
 example:- Npm install google-map --save => this command is to store in the package.json
      
-angular.json => used for where start the code or where starting page.
+angular.json => used for mention that where start the project like index.ts & main.html or where we start page.
+
+----- main.ts 		=> starting point of the project.
+----- Index.html 	=> first page to load.
+----- App 		=> Root modules ,Routing, Component     
+
+package.json => maintain the dependency library list.
+
+Node.modules => Store all internal & third party library folders.
+
+Flow Cycle (after gave that 'ng serve' it expose browser)
+---------------------------------------------------------
+angular.json or Angular-cli --> main.ts & intex.html --> Main.ts --> app.module.ts --> bootstrap.app.component --> routing --> path --> Load component.
+
+Modules
+-------
+imports
+Declaration
+Exports
+Providers
+
+Components command:- ng g c componentName
+----------
+HTML + TypeScript + CSS = Components
+Page is splited into multiple components. example:- filter-Component,serch-Components,Serch-Result-Components etc...
+
+Life Cycle
+-----------
+Constructor --> ngOnChange --> ngOnInit --> ngDoCheck --> ngAfterContentInit --> ngAfterContentChecked --> ngAfterViewInit --> ngAfterViewChecked --> ngOnDestory
+
+Data Binding 
+------------
 
 
-Project structure
------ package.json-------> 
-Dependencies are the packages that your application or package requires to run correctly.
-DevDependencies are packages that are only required during the development process.developers to build, test, and maintain the code. 
-notes:- when give npm install in cli then it import in the package.json
+             <----------------interpolation {{page title}}--------------------
+     DOM     <----------property Binding<img [src]='game.imageUrl'>-----------
+	     ----------event Binding <button (click)='toggleImage()'>-------->   Component
+	     <-----Two Way Binding <input [(ngModule)]='listFilter'/>--------->
 
-Modules 
-
+Directives
+----------
 Components
+Attributes
+Structural 
 
-Nested Components
+Pipe 
+----
+just a formatter (example:- Datepipe,Uppercasepipe,Lowercasepipe,currencypipe,Jsonpipe,Slicepipe,Percentpipe,Decimalpipe).command:- ng g p pipeName
 
-interpolation 
+Service
+--------
+supporting Service :- like document Service , EmailService,MessagingService etc..
+Data Transfer :- used for one component to another component transfer that data.
+how to use that service:-
+1. create the services.
+2. add in the providers.
+3. import in the component .
+4. declare in the constructor.
+5. use where we need in the component.
+command:- ng g s serviceName
 
-Property Binding 
----- Event Binding
----- 
------>  $0 it shown the current node.
-        HTML is static , it shows the hot coded values , but DOM it shows the updated or modified dynamic values.so always communicate with the DOM.
+
+
+
+===================================================================================================================================================================================
+

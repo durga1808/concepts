@@ -1,0 +1,22 @@
+stacks i known 
+github , java , maven , spring-boot , quarkus , Rest API ,Docker,OpenShift,Angular, MongoDB,Postgres
+
+project 
+--------
+name of the project :- office automation
+4 microservices
+FrontendUI(Aungular),
+Onboarding(springboot),in this module we collect all employee resume & download , upload , employee details 
+ProjectMangement(Quarkus)assigned to project , project details , unassigned employees,
+Invoice(Quarkus).client billing details , outstanding details 
+
+=================================================================================================
+java
+maven
+github
+spring-boot
+qurakus
+kafka 
+Angular
+
+
