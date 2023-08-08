@@ -116,7 +116,7 @@ git checkout -b <branchname>			      => creating new branch  and switch to new b
 
 git branch --no-merged				      => list of non merged branches shown
 
-git switch
+git branch -m <old_branch_name> <new_branch_name>     => rename the existing branch
 
 ==================================================================================================================================================================================
 

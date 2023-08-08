@@ -1,0 +1,48 @@
+Functions
+==========
+1.Functions
+2.Arrow Functions
+
+Objects
+=======
+1.Creating Objects:
+	a. Object Literal Notation:
+	b. Object Constructor:
+2.Accessing Object Properties:
+3.Modifying Object Properties:
+4.Adding New Properties:
+5.Deleting Properties:
+6.Object Methods:
+7.Object Looping:
+8.Object Destructuring:
+9.Nested Objects:
+
+Arrays & Array methods 
+=======================
+1.Creating Arrays:
+2.Accessing Array Elements:
+3.Array Length:
+4.Modifying Array Elements:
+5.Array Methods:
+  	push(),pop(),shift(),unshift(),indexOf(),slice(),splice(),forEach()
+
+Destructuring
+==============
+1.Destructuring Arrays:
+2.Destructuring Objects:
+3.Destructuring Function Parameters:
+
+template literals
+=================
+1.Variable Interpolation:
+2.Expression Evaluation:
+3.Multiline Strings:
+4.Nesting Template Literals:
+
+
+url link :- 
+---------
+https://chat.openai.com/share/69589445-e445-4dd0-8837-8bb2e496a64e
+
+
+

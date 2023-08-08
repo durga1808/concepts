@@ -11,12 +11,14 @@ ProjectMangement(Quarkus)assigned to project , project details , unassigned empl
 Invoice(Quarkus).client billing details , outstanding details 
 
 =================================================================================================
-java
-maven
-github
-spring-boot
-qurakus
-kafka 
-Angular
+java ======> Intermediate
+maven =====> Intermediate
+github  ====> Intermediate
+spring-boot ===> Intermediate
+qurakus  ===>  basic
+kafka    ====> basic
+Angular  ====> Basic
+
+working on orderservice,providerService,VendorService,DeleiveryService & paymentService
 
 
