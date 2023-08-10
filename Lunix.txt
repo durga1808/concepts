@@ -1,4 +1,4 @@
-Linux commands
+Linux commands (Debian)
 ===============
 
 root@LAPTOP-OLBVP6PU:~# =>  cd /mnt/c
@@ -25,4 +25,10 @@ like write some thing inside the file => vi NewText.txt
 example for unzip the file 
 -------------------------
 root@LAPTOP-OLBVP6PU:/mnt/c/Users/abala/OneDrive/Desktop/extractTheZipFile# unzip /mnt/c/Users/abala/OneDrive/Desktop/kafka/order-service.zip
+
+
+kill the port 
+-------------
+netstat -ano | findstr :8080
+taskkill /PID <PID> /F
 

@@ -1,7 +1,3 @@
-kill the port 
--------------
-netstat -ano | findstr :8080
-taskkill /PID <PID> /F
 
 core java ==> java 1 SE
 
@@ -51,7 +47,7 @@ The main difference between annotations and classes is that annotations provide 
 
 @Component => (@Component, @Controller, @Service, and @Repository)
 
-@Qualifier => giving the name for the component.{example:- @Component("bala")  @Qualifier("bala")}
+@Qualifier => giving the name for the component.	{example:- @Component("bala")  @Qualifier("bala")}
 
 @Autowired => connecting in between 2 components.
 
@@ -72,15 +68,14 @@ SpringApplication.run() => starts the Spring application Context , setup the def
 singleton pattern
 ==================
 
-this design pattern restrict the object to single object and
-provide the way to access the object globally.
+this design pattern restrict the object to single object and provide the way to access the object globally.
 
 to avoid concurrent issues.
 
 reduce the memory usage.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------
 Spring boot using  MVC to connect DB
 
 default in springboot H2 DataBase:
@@ -153,9 +148,7 @@ B2 Channels topics
 46.@NamedQuery annotation.
 47.Documents API'S using Swaggar.
 
-
-
----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 change the port "server.port=8090"
 
 disable the embedded server "spring.main.web-application-type=none"
@@ -174,6 +167,108 @@ this the way to application.properties file into java class
 Private String customVal;
 
 @RestController 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Preparing for a Spring Boot interview 
+=====================================
+Review Core Java Concepts:
+
+Spring Framework Fundamentals:
+
+Spring Boot Basics:
+
+Spring Boot Project Structure:
+
+Spring Boot Annotations:
+
+Spring Boot Data Access:
+
+RESTful Web Services:
+
+Spring Boot Testing:
+
+Spring Boot Security:
+
+Spring Boot Microservices:
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q1. What Is Spring Boot and What Are Its Main Features?
+   Auto-Configuration,Standalone Executable JARs,Opinionated Defaults ,Embedded Servers,Production-Ready Features,Easy Dependency Management
+
+Q2. What Are the Differences Between Spring and Spring Boot?
+Q3. How Can We Set Up a Spring Boot Application With Maven?
+     create a maven project , add dependency in pom.xml file ,create a springBoot main class, bulid & run the springboot.
+
+Q4. What Is Spring Initializr?
+Q5. What Spring Boot Starters Are Available Out There?
+Q6. How to Disable a Specific Auto-Configuration?
+Q7. How to Register a Custom Auto-Configuration?
+Q8. How to Tell an Auto-Configuration to Back Away When a Bean Exists?
+Q9. How to Deploy Spring Boot Web Applications as Jar and War Files?
+Q10. How to Use Spring Boot for Command-Line Applications?
+Q11. What Are Possible Sources of External Configuration?
+     Properties Files,Environment Variables,Command-Line Arguments,Configuration Servers,Profile-Specific Configuration
+
+Q12. What Does It Mean That Spring Boot Supports Relaxed Binding?
+Q13. What Is Spring Boot DevTools Used For?
+Q14. How to Write Integration Tests?
+Q15. What Is Spring Boot Actuator Used For?
+Q16. Which Is Better to Configure a Spring Boot Project — Properties or YAML?
+Q17. What Basic Annotations Does Spring Boot Offer?
+Q18. How to Change the Default Port in Spring Boot?
+Q19. Which Embedded Servers Does Spring Boot Support, and How to Change the Default?
+Q20. Why Do We Need Spring Profiles?
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://www.marcobehler.com/guides/spring-boot-interview-questions
+1. Is the following statement true or false: "Every Spring Boot application is a web application running within an embedded Apache Tomcat". Give reasons for your answer.
+
+2. What is the difference between Spring Boot and Spring MVC? Or between Spring Boot and Spring Framework? Can you use them together in the same project?
+
+3. Name two ways to create a new Spring Boot project from scratch? Also, how do you know what spring-boot-starters your project needs?
+
+4. Why do you not need to specify dependency versions in your pom.xml file when including 3rd party libraries? Does that hold true for all 3rd party libraries or only some? How can you find out what libraries Spring Boot supports?
+
+5. You want to make your application configurable, say specify a different database connection for development and production environments. What are your options?
+
+6. Is the following statement true or false: "Every Spring Boot project must use Thymeleaf as an HTML templating engine". What are your options when it comes to rendering HTML?
+
+7. How can you implement relational database access with Spring Boot? What are your options?
+
+8. You need to configure logging in your application but you want to differentiate between the log levels on your machine and the log levels on different environments (qa, test, prod). What options do you have?
+
+9. What is the easiest way to deploy a Spring Boot application in production? What other options are there?
+
+10. You’ve been told to enable "Spring Security" on your application. What happens when you add the Spring Security starter to your application?
+
+11. How would you find out which auto-configurations Spring Boot applied on startup and which conditions it evaluated?
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What do you understand by the shutdown in the actuator?
+
+2. How and where can you define properties in Spring Boot? 
+
+3. Describe spring-boot-starter-parent?
+
+4. What is Spring Boot dependency management?
+
+5. Can you disable particular auto-configuration in spring boot? Explain how?
+
+6. Can Spring Boot also be used to create non-web applications?
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://www.upgrad.com/blog/spring-boot-interview-questions-and-answers-beginners-experienced/
+
+1. How can you check the environment properties in a Spring Boot application?
+
+2. What do we mean by an IOC container?
+
+3. Can you please explain Spring Boot Dependency Management?
+
+4. How can you create a login page in Spring Boot?
+
+5. What is the procedure for creating a non-web application in Spring Boot?
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

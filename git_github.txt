@@ -118,6 +118,8 @@ git branch --no-merged				      => list of non merged branches shown
 
 git branch -m <old_branch_name> <new_branch_name>     => rename the existing branch
 
+git merge <current/target/to> <going to copy this branch/from>
+
 ==================================================================================================================================================================================
 
 git merge commands (fast-forward merge & 3-way merge)
@@ -263,7 +265,7 @@ Reduced conflicts:  reducing the risk of conflicts and mistakes.
 
 how to use the git flow ?
 
-intialise the git flow 	: git flow init => it gives setup the sturute of the project
+intialise the git flow 	: git flow init => it gives setup the structure of the project
 
 create a feature branch  	: git flow feature start => create the feature branch.
 
